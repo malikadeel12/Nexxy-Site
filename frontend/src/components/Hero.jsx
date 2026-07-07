@@ -18,16 +18,6 @@ export default function Hero() {
         playsInline
       />
       <div className="relative z-10 flex flex-col items-center w-full">
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          data-testid="hero-badge"
-          className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-4 py-1.5 text-sm text-muted-foreground font-body mb-6"
-        >
-          Now with GPT-5 support ✨
-        </motion.div>
-
         <motion.h1
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
