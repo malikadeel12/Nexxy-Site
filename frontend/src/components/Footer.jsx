@@ -9,7 +9,7 @@ export default function Footer() {
           <a href="#about" className="hover:text-foreground transition-colors duration-200">About</a>
           <a href="#contact" className="hover:text-foreground transition-colors duration-200">Contact</a>
         </div>
-        <span className="text-sm text-muted-foreground">© 2026 Nexxy. All rights reserved.</span>
+        <span className="text-sm text-muted-foreground">© 2026 Nexxy. Written by humans, automated by agents.</span>
       </div>
     </footer>
   );

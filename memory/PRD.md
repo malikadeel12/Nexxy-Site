@@ -17,9 +17,9 @@ Build a branded company website for "Nexxy" (company also has a Nexxy CRM). Deta
 ## Implemented (Jun 2026)
 - index.css tokens per spec, tailwind fontFamily display/body
 - Navbar (✦ Nexxy, links, rounded-full CTA)
-- Hero exactly per spec (video bg, badge, headline, subheadline, Book a demo + play btn, frosted dashboard preview clipped by overflow-hidden)
+- Hero per spec + overlap effect: half dashboard in 100vh hero, half floats over Features (user-requested change from clipped spec)
 - DashboardPreview fully coded in React (topbar, sidebar w/ Workflows, action pills, balance card w/ SVG chart, accounts card, transactions table)
-- Features (6 cards), Pricing (Starter $29 / Growth $79 highlighted / Enterprise Custom), About (story + 4 stats), Contact (form → POST /api/leads), Footer
+- Humanized redesign (v2): Features = trusted-by strip + asymmetric bento grid (wide agent card w/ workflow chips, dark CRM card) + testimonial (Maya Krishnan, Crestline); About = founder story (2023, "Friday problem", 11,482 teams, 23 people) + numbered beliefs list; Pricing = "The price is on the page" + human footnote; Contact = "Talk to a person, not a chatbot"; Footer = "Written by humans, automated by agents"
 - Backend: POST/GET /api/leads (Lead model, ISO datetime storage)
 - Testing: iteration_1 — 100% backend & frontend pass
 

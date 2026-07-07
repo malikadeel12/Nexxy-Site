@@ -7,8 +7,8 @@ const plans = [
     name: "Starter",
     price: "$29",
     period: "/mo",
-    desc: "For small teams getting started with automation.",
-    features: ["Up to 3 team members", "5 active workflows", "Nexxy CRM (500 contacts)", "Email support"],
+    desc: "For small teams who want the busywork gone by Friday.",
+    features: ["Up to 3 team members", "5 active workflows", "Nexxy CRM (500 contacts)", "Email support — real humans"],
     cta: "Start free trial",
     highlight: false,
   },
@@ -16,7 +16,7 @@ const plans = [
     name: "Growth",
     price: "$79",
     period: "/mo",
-    desc: "For growing teams that need serious automation power.",
+    desc: "Where most teams land. Unlimited workflows, GPT-5 agents.",
     features: [
       "Up to 15 team members",
       "Unlimited workflows",
@@ -31,7 +31,7 @@ const plans = [
     name: "Enterprise",
     price: "Custom",
     period: "",
-    desc: "For organizations with advanced security and scale needs.",
+    desc: "SSO, SLAs, security reviews — we speak procurement.",
     features: [
       "Unlimited everything",
       "Dedicated success manager",
@@ -57,10 +57,10 @@ export default function Pricing() {
         >
           <p className="text-sm text-accent font-medium font-body mb-3">Pricing</p>
           <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight text-foreground">
-            Simple pricing that <em className="italic">scales</em> with you
+            The price is <em className="italic">on the page</em>. Imagine that.
           </h2>
           <p className="mt-4 text-muted-foreground font-body leading-relaxed">
-            Start free for 14 days. No credit card required. Cancel anytime.
+            No "book a call to see pricing." Every plan starts with 14 free days, no card required.
           </p>
         </motion.div>
 
@@ -121,6 +121,10 @@ export default function Pricing() {
             </motion.div>
           ))}
         </div>
+
+        <p className="mt-10 text-center text-sm text-muted-foreground font-body">
+          Prices in USD, billed monthly. Annual gets you two months free. And yes — the trial is actually free.
+        </p>
       </div>
     </section>
   );

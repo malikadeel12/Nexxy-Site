@@ -43,15 +43,16 @@ export default function Contact() {
         >
           <p className="text-sm text-accent font-medium font-body mb-3">Contact</p>
           <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight text-foreground">
-            Let's build something <em className="italic">together</em>
+            Talk to a <em className="italic">person</em>, not a chatbot
           </h2>
           <p className="mt-6 text-muted-foreground font-body leading-relaxed max-w-md">
-            Book a demo, ask about pricing, or just say hello. Our team typically responds
-            within one business day.
+            Book a demo, ask a blunt pricing question, or tell us what your current tool
+            gets wrong. Someone on the team — usually Priya or Dev — replies within a
+            business day.
           </p>
           <div className="mt-8 space-y-3 font-body text-sm">
             <p className="text-foreground font-medium">hello@nexxy.com</p>
-            <p className="text-muted-foreground">Mon–Fri, 9am–6pm</p>
+            <p className="text-muted-foreground">Mon–Fri, 9am–6pm. Weekends we're testing our own automations.</p>
           </div>
         </motion.div>
 
@@ -87,7 +88,7 @@ export default function Contact() {
           />
           <Textarea
             data-testid="contact-message-input"
-            placeholder="Tell us about your automation needs..."
+            placeholder="What's eating your team's time?"
             rows={5}
             value={form.message}
             onChange={update("message")}
