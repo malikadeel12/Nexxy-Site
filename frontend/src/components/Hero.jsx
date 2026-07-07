@@ -8,7 +8,7 @@ const VIDEO_URL =
 
 export default function Hero() {
   return (
-    <section id="home" data-testid="hero-section" className="relative flex-1 flex flex-col items-center pt-10 md:pt-14 px-6">
+    <section id="home" data-testid="hero-section" className="relative flex-1 flex flex-col items-center pt-10 md:pt-14 px-6 pb-16 overflow-hidden">
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"
         src={VIDEO_URL}
