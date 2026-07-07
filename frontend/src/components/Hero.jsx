@@ -8,7 +8,7 @@ const VIDEO_URL =
 
 export default function Hero() {
   return (
-    <section id="home" data-testid="hero-section" className="relative flex-1 flex flex-col items-center pt-10 md:pt-14 px-6 pb-16 overflow-hidden">
+    <section id="home" data-testid="hero-section" className="relative z-10 flex-1 flex flex-col items-center pt-10 md:pt-14 px-6">
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"
         src={VIDEO_URL}
@@ -76,7 +76,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-8 w-full max-w-5xl"
+          className="mt-8 w-full max-w-5xl -mb-64 md:-mb-80 relative z-10"
         >
           <div
             className="rounded-2xl overflow-hidden p-3 md:p-4"

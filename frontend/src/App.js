@@ -11,7 +11,7 @@ import Footer from "@/components/Footer";
 
 const Landing = () => (
   <div className="bg-background">
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="flex flex-col bg-background">
       <Navbar />
       <Hero />
     </div>
