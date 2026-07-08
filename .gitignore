@@ -80,7 +80,13 @@ agenthub/agents/youtube/db
 
 # Test reports and agent memory
 test_reports/
-memory/test_credentials.md
+memory/
+
+# Only frontend is pushed to GitHub
+backend/
+tests/
+scripts/
+test_result.md
 
 # Mobile development
 android-sdk/
