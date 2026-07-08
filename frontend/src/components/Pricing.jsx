@@ -4,36 +4,36 @@ import { Button } from "@/components/ui/button";
 
 const plans = [
   {
-    name: "Starter",
-    price: "$29",
-    period: "/mo",
-    desc: "For solo agents who want every follow-up handled.",
-    features: ["Up to 3 team members", "5 nurture workflows", "Nexxy CRM (500 contacts)", "Email support — real humans"],
-    cta: "Start free trial",
-    highlight: false,
-  },
-  {
-    name: "Growth",
-    price: "$79",
-    period: "/mo",
-    desc: "Where most teams land. Unlimited nurture, quiet AI.",
+    name: "Nexxy Pro",
+    price: "$1",
+    period: "first month",
+    desc: "Then $49.99/month. No hidden setup fees. No long-term contracts.",
+    note: "VoIP usage (calls, texts, emails) billed separately at standard rates.",
     features: [
-      "Up to 15 team members",
-      "Unlimited nurture workflows",
-      "Nexxy CRM (10,000 contacts)",
-      "AI follow-up drafting & content",
-      "Priority support",
+      "AI-powered pipeline management",
+      "Pre-built sales funnels",
+      "Automated SMS & email campaigns",
+      "Social media scheduling",
+      "Inbound call AI assistant",
+      "Calendar management",
+      "E-signature document sending",
+      "Website with lead tracking",
+      "Payment integrations",
+      "Power dialer support",
+      "Lead-to-referral network access",
     ],
-    cta: "Start free trial",
+    cta: "Start for $1",
     highlight: true,
   },
   {
     name: "Enterprise",
     price: "Custom",
     period: "",
-    desc: "SSO, SLAs, security reviews — we speak procurement.",
+    desc: "For teams and brokerages. SSO, SLAs, security reviews — we speak procurement.",
+    note: null,
     features: [
-      "Unlimited everything",
+      "Everything in Nexxy Pro",
+      "Unlimited team members",
       "Dedicated success manager",
       "SSO & audit logs",
       "Custom integrations",
@@ -57,14 +57,14 @@ export default function Pricing() {
         >
           <p className="text-sm text-accent font-medium font-body mb-3">Pricing</p>
           <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight text-foreground">
-            The price is <em className="italic">on the page</em>. Imagine that.
+            <em className="italic">$1</em> for Your First Month
           </h2>
           <p className="mt-4 text-muted-foreground font-body leading-relaxed">
-            No "book a call to see pricing." Every plan starts with 14 free days, no card required.
+            Then just $49.99/month after that — less than a family dinner.
           </p>
         </motion.div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch max-w-4xl mx-auto">
           {plans.map((plan, i) => (
             <motion.div
               key={plan.name}
@@ -72,7 +72,7 @@ export default function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              data-testid={`pricing-card-${plan.name.toLowerCase()}`}
+              data-testid={`pricing-card-${plan.name.toLowerCase().replace(" ", "-")}`}
               className={`rounded-2xl p-8 flex flex-col font-body ${
                 plan.highlight
                   ? "bg-primary text-primary-foreground shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
@@ -85,33 +85,33 @@ export default function Pricing() {
                 </span>
                 {plan.highlight && (
                   <span className="rounded-full bg-accent text-accent-foreground px-3 py-1 text-xs font-medium">
-                    Most popular
+                    Best value
                   </span>
                 )}
               </div>
-              <div className="mt-4 flex items-baseline gap-1">
+              <div className="mt-4 flex items-baseline gap-2">
                 <span className="font-display text-5xl tracking-tight">{plan.price}</span>
                 <span className={`text-sm ${plan.highlight ? "text-primary-foreground/60" : "text-muted-foreground"}`}>
                   {plan.period}
                 </span>
               </div>
-              {plan.highlight && (
-                <p className="mt-1 text-xs text-primary-foreground/50">That's about $2.60 a day. One coffee.</p>
-              )}
               <p className={`mt-3 text-sm leading-relaxed ${plan.highlight ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
                 {plan.desc}
               </p>
-              <ul className="mt-6 space-y-3 flex-1">
+              {plan.note && (
+                <p className="mt-2 text-xs text-primary-foreground/50 leading-relaxed">{plan.note}</p>
+              )}
+              <ul className="mt-6 space-y-2.5 flex-1">
                 {plan.features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm">
-                    <Check className={`h-4 w-4 mt-0.5 shrink-0 ${plan.highlight ? "text-accent" : "text-accent"}`} />
+                    <Check className="h-4 w-4 mt-0.5 shrink-0 text-accent" />
                     <span className={plan.highlight ? "text-primary-foreground/90" : "text-foreground"}>{f}</span>
                   </li>
                 ))}
               </ul>
               <Button
-                data-testid={`pricing-cta-${plan.name.toLowerCase()}`}
-                className={`mt-8 rounded-full w-full text-sm font-medium ${
+                data-testid={`pricing-cta-${plan.name.toLowerCase().replace(" ", "-")}`}
+                className={`press mt-8 rounded-full w-full text-sm font-medium ${
                   plan.highlight
                     ? "bg-accent text-accent-foreground hover:bg-accent/90"
                     : ""
@@ -126,7 +126,7 @@ export default function Pricing() {
         </div>
 
         <p className="mt-10 text-center text-sm text-muted-foreground font-body">
-          Prices in USD, billed monthly. Annual gets you two months free. And yes — the trial is actually free.
+          Prices in USD. Cancel anytime — no long-term contracts.
         </p>
       </div>
     </section>
