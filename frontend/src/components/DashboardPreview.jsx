@@ -61,7 +61,7 @@ export default function DashboardPreview() {
           </div>
           <span className="font-bold tracking-wider text-xs" style={{ color: DARK }}>NEXXY</span>
         </div>
-        <div className="flex items-center gap-1.5 rounded-lg bg-[#EBF1FA]/60 border border-slate-200/60 px-3 py-1.5 w-72">
+        <div className="hidden sm:flex items-center gap-1.5 rounded-lg bg-[#EBF1FA]/60 border border-slate-200/60 px-3 py-1.5 w-44 md:w-72">
           <Search className="h-3 w-3 text-slate-400" />
           <span className="text-slate-400">Search contacts, leads, deals...</span>
         </div>
@@ -131,7 +131,7 @@ export default function DashboardPreview() {
                 <RefreshCw className="h-3 w-3" />
               </div>
             </div>
-            <div className="grid grid-cols-5 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
               {metrics.map((m) => (
                 <div key={m.label} className="bg-white rounded-xl p-3.5 border border-white/80 relative h-24 flex flex-col justify-between" style={{ boxShadow: "0 4px 20px rgba(220,225,240,0.4)" }}>
                   <div className="h-7 w-7 rounded-lg flex items-center justify-center" style={m.blue ? { backgroundColor: "#E8EFFF", color: BLUE } : { backgroundColor: "#F4F7FC", color: "#64748b" }}>
@@ -156,7 +156,7 @@ export default function DashboardPreview() {
           {/* Quick Actions */}
           <div className="space-y-2.5">
             <span className="font-semibold text-xs" style={{ color: DARK }}>Quick Actions</span>
-            <div className="grid grid-cols-5 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
               {actions.map((a) => (
                 <div key={a.label} className="bg-white/80 rounded-xl p-3.5 border border-white/80 flex flex-col items-center justify-center gap-2 h-20" style={{ boxShadow: "0 4px 20px rgba(220,225,240,0.4)" }}>
                   <div className="h-7 w-7 rounded-full flex items-center justify-center text-slate-600 bg-slate-50">

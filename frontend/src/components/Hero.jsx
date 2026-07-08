@@ -65,11 +65,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-6 flex items-center gap-3"
+          className="mt-6 flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto"
         >
           <Button
             data-testid="hero-book-demo-button"
-            className="press rounded-full px-6 py-5 text-sm font-medium font-body"
+            className="press rounded-full px-6 py-5 text-sm font-medium font-body w-full sm:w-auto"
             asChild
           >
             <a href="#contact">Start Building Better Relationships</a>
