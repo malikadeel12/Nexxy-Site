@@ -129,7 +129,7 @@ export default function DashboardPreview() {
               <p className="text-[10px] text-slate-500 leading-relaxed pl-7">
                 You have <span className="font-medium text-slate-700">3 hot leads</span> and{" "}
                 <span className="font-medium text-slate-700">12 active deals</span>. I recommend reaching out to{" "}
-                <span className="font-medium" style={{ color: BLUE }}>(310) 370-3438</span> first — your highest-scoring lead.
+                <span className="font-medium" style={{ color: BLUE }}>(512) 345-6789</span> first — your highest-scoring lead.
               </p>
             </div>
           </div>
