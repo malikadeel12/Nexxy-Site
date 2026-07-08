@@ -97,7 +97,7 @@ export default function Contact() {
             data-testid="contact-submit-button"
             type="submit"
             disabled={loading}
-            className="rounded-full px-6 w-full md:w-auto text-sm font-medium"
+            className="press rounded-full px-6 w-full md:w-auto text-sm font-medium"
           >
             {loading ? "Sending..." : "Send message"}
           </Button>

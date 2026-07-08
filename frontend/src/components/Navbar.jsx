@@ -27,7 +27,7 @@ export default function Navbar() {
             key={link.label}
             href={link.href}
             data-testid={`nav-link-${link.label.toLowerCase()}`}
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+            className="nav-link text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
           >
             {link.label}
           </a>
@@ -35,7 +35,7 @@ export default function Navbar() {
       </div>
       <Button
         data-testid="navbar-cta-button"
-        className="rounded-full px-5 text-sm font-medium"
+        className="press rounded-full px-5 text-sm font-medium"
         asChild
       >
         <a href="/#contact">Get Started</a>

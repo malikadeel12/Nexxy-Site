@@ -76,7 +76,7 @@ export default function Pricing() {
               className={`rounded-2xl p-8 flex flex-col font-body ${
                 plan.highlight
                   ? "bg-primary text-primary-foreground shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
-                  : "bg-background border border-border"
+                  : "hover-lift bg-background border border-border"
               }`}
             >
               <div className="flex items-center justify-between">
@@ -95,6 +95,9 @@ export default function Pricing() {
                   {plan.period}
                 </span>
               </div>
+              {plan.highlight && (
+                <p className="mt-1 text-xs text-primary-foreground/50">That's about $2.60 a day. One coffee.</p>
+              )}
               <p className={`mt-3 text-sm leading-relaxed ${plan.highlight ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
                 {plan.desc}
               </p>

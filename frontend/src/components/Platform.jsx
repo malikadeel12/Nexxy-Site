@@ -51,8 +51,8 @@ export default function Platform() {
                 {b.headline}
               </h2>
             </div>
-            <div className={`lg:col-span-5 ${i % 2 === 1 ? "lg:col-start-1 lg:order-1" : "lg:col-start-8"} flex items-end h-full`}>
-              <p className="text-muted-foreground font-body leading-relaxed">{b.copy}</p>
+            <div className={`lg:col-span-5 ${i % 2 === 1 ? "lg:col-start-1 lg:order-1" : "lg:col-start-8"} lg:pt-20`}>
+              <p className="text-muted-foreground font-body leading-relaxed border-l-2 border-accent/30 pl-6">{b.copy}</p>
             </div>
           </motion.div>
         ))}

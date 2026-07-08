@@ -69,7 +69,7 @@ export default function Hero() {
         >
           <Button
             data-testid="hero-book-demo-button"
-            className="rounded-full px-6 py-5 text-sm font-medium font-body"
+            className="press rounded-full px-6 py-5 text-sm font-medium font-body"
             asChild
           >
             <a href="#contact">Start Building Better Relationships</a>
@@ -77,7 +77,7 @@ export default function Hero() {
           <Button
             data-testid="hero-play-button"
             variant="ghost"
-            className="h-11 rounded-full border-0 bg-background px-5 shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:bg-background/80 text-sm font-body font-medium"
+            className="press h-11 rounded-full border-0 bg-background px-5 shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:bg-background/80 text-sm font-body font-medium"
           >
             <Play className="h-4 w-4 fill-foreground mr-2" />
             See Nexxy In Action
