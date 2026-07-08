@@ -38,20 +38,20 @@
         --card-foreground: 42 25% 92%;
         --popover: 0 0% 7%;
         --popover-foreground: 42 25% 92%;
-        --primary: 45 80% 55%;
+        --primary: 44 60% 55%;
         --primary-foreground: 0 0% 6%;
         --secondary: 0 0% 10%;
         --secondary-foreground: 42 25% 92%;
         --muted: 0 0% 12%;
         --muted-foreground: 42 10% 62%;
-        --accent: 45 80% 55%;
+        --accent: 44 60% 55%;
         --accent-foreground: 0 0% 6%;
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 0 0% 98%;
         --border: 0 0% 16%;
         --input: 0 0% 16%;
-        --ring: 45 80% 55%;
-        --shadow-dashboard: 0 25px 80px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(212, 175, 55, 0.12);
+        --ring: 44 60% 55%;
+        --shadow-dashboard: 0 25px 80px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(209, 173, 70, 0.12);
     }
 }
 
@@ -164,7 +164,7 @@ em {
 }
 .dark .glass-wrapper {
     background: rgba(15, 15, 15, 0.55);
-    border: 1px solid rgba(212, 175, 55, 0.18);
+    border: 1px solid rgba(209, 173, 70, 0.18);
 }
 
 /* Logo adapts to dark mode (navy inverts to warm gold) */
