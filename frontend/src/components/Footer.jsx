@@ -51,7 +51,7 @@ export default function Footer() {
                   <a
                     href={l.href}
                     data-testid={`footer-link-${l.label.toLowerCase()}`}
-                    className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-200"
+                    className="text-sm text-foreground/85 hover:text-foreground transition-colors duration-200"
                   >
                     {l.label}
                   </a>
@@ -66,7 +66,7 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {product.map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-200">
+                  <a href={l.href} className="text-sm text-foreground/85 hover:text-foreground transition-colors duration-200">
                     {l.label}
                   </a>
                 </li>
@@ -79,7 +79,7 @@ export default function Footer() {
             <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-4">Get in touch</p>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <a href="mailto:support@getnexxy.com" className="text-foreground/70 hover:text-foreground transition-colors duration-200">
+                <a href="mailto:support@getnexxy.com" className="text-foreground/85 hover:text-foreground transition-colors duration-200">
                   support@getnexxy.com
                 </a>
               </li>

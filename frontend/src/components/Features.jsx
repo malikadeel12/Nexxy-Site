@@ -54,9 +54,9 @@ export default function Features() {
         >
           <div className="marquee-track flex w-max items-center font-body">
             {[...beliefs, ...beliefs].map((b, i) => (
-              <span key={i} className="flex items-center whitespace-nowrap text-sm font-medium text-foreground/60">
+              <span key={i} className="flex items-center whitespace-nowrap text-sm font-medium text-foreground/80">
                 {b}
-                <span className="mx-10 text-accent/60 text-xs">✦</span>
+                <span className="mx-10 text-accent/70 text-xs">✦</span>
               </span>
             ))}
           </div>
@@ -121,7 +121,7 @@ export default function Features() {
                         </div>
                         <div className="text-xs text-muted-foreground mt-0.5">{step.desc}</div>
                       </div>
-                      <span className="font-display italic text-lg text-muted-foreground/40">0{i + 1}</span>
+                      <span className="font-display italic text-lg text-muted-foreground/70">0{i + 1}</span>
                     </motion.div>
                   );
                 })}
