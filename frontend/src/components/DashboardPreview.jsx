@@ -93,9 +93,11 @@ export default function DashboardPreview() {
             ))}
           </div>
           <div className="border-t border-slate-200 pt-2 mt-1">
-            <div className="h-7 w-7 rounded-full flex items-center justify-center text-white text-[9px] font-semibold ring-2 ring-slate-200" style={{ backgroundColor: DARK }}>
-              JB
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+              alt="Profile"
+              className="h-7 w-7 rounded-full object-cover ring-2 ring-slate-200"
+            />
           </div>
         </div>
 
