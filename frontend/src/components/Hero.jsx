@@ -1,17 +1,42 @@
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DashboardPreview from "@/components/DashboardPreview";
+import { useTheme } from "@/ThemeContext";
 
 const VIDEO_URL =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260319_015952_e1deeb12-8fb7-4071-a42a-60779fc64ab6.mp4";
+const DARK_VIDEO_URL = "/hero-dark.mp4";
 
 export default function Hero() {
+  const { isDark } = useTheme();
+  const lightRef = useRef(null);
+  const darkRef = useRef(null);
+
+  useEffect(() => {
+    const active = isDark ? darkRef.current : lightRef.current;
+    if (active) active.play().catch(() => {});
+  }, [isDark]);
+
   return (
     <section id="home" data-testid="hero-section" className="relative z-10 flex-1 flex flex-col items-center pt-28 md:pt-32 px-6">
       <video
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        ref={lightRef}
+        className="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 ease-in-out"
+        style={{ opacity: isDark ? 0 : 1 }}
         src={VIDEO_URL}
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+      <video
+        ref={darkRef}
+        data-testid="hero-dark-video"
+        className="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 ease-in-out"
+        style={{ opacity: isDark ? 1 : 0 }}
+        src={DARK_VIDEO_URL}
         autoPlay
         muted
         loop
@@ -90,14 +115,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-8 w-full max-w-5xl -mb-64 md:-mb-80 relative z-10"
         >
-          <div
-            className="rounded-2xl overflow-hidden p-3 md:p-4"
-            style={{
-              background: "rgba(255, 255, 255, 0.4)",
-              border: "1px solid rgba(255, 255, 255, 0.5)",
-              boxShadow: "var(--shadow-dashboard)",
-            }}
-          >
+          <div className="glass-wrapper rounded-2xl overflow-hidden p-3 md:p-4">
             <DashboardPreview />
           </div>
         </motion.div>

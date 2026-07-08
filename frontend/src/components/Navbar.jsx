@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/ThemeContext";
 
 const links = [
   { label: "Home", href: "/#home" },
@@ -12,6 +13,7 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { isDark, toggle } = useTheme();
 
   return (
     <header className="fixed top-4 inset-x-4 md:inset-x-10 lg:inset-x-16 z-50 font-body">
@@ -20,7 +22,7 @@ export default function Navbar() {
         className="flex items-center justify-between rounded-full border border-border bg-background/75 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.06)] px-5 md:px-8 py-3"
       >
         <a href="/#home" data-testid="navbar-logo" className="flex items-center">
-          <img src="/nexxy-logo.png" alt="Nexxy" className="h-4 md:h-5 w-auto" />
+          <img src="/nexxy-logo.png" alt="Nexxy" className="logo-adaptive h-4 md:h-5 w-auto" />
         </a>
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
@@ -35,6 +37,14 @@ export default function Navbar() {
           ))}
         </div>
         <div className="flex items-center gap-2">
+          <button
+            data-testid="theme-toggle"
+            onClick={toggle}
+            className="press h-9 w-9 rounded-full border border-border bg-background flex items-center justify-center text-foreground hover:bg-secondary transition-colors duration-200"
+            aria-label="Toggle dark mode"
+          >
+            {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+          </button>
           <Button
             data-testid="navbar-cta-button"
             className="press rounded-full px-5 text-sm font-medium"

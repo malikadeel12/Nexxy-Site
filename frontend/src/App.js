@@ -1,6 +1,7 @@
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
+import { ThemeProvider } from "@/ThemeContext";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
@@ -30,15 +31,17 @@ const Landing = () => (
 
 function App() {
   return (
-    <div className="App">
-      <Toaster position="top-center" richColors />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/manifesto" element={<Manifesto />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <Toaster position="top-center" richColors />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/manifesto" element={<Manifesto />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </ThemeProvider>
   );
 }
 

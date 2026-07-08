@@ -84,7 +84,7 @@ export default function Pricing() {
                   {plan.name}
                 </span>
                 {plan.highlight && (
-                  <span className="rounded-full bg-accent text-accent-foreground px-3 py-1 text-xs font-medium">
+                  <span className="rounded-full bg-accent text-accent-foreground dark:bg-primary-foreground dark:text-primary px-3 py-1 text-xs font-medium">
                     Best value
                   </span>
                 )}
@@ -104,7 +104,7 @@ export default function Pricing() {
               <ul className="mt-6 space-y-2.5 flex-1">
                 {plan.features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm">
-                    <Check className="h-4 w-4 mt-0.5 shrink-0 text-accent" />
+                    <Check className={`h-4 w-4 mt-0.5 shrink-0 ${plan.highlight ? "text-accent dark:text-primary-foreground" : "text-accent"}`} />
                     <span className={plan.highlight ? "text-primary-foreground/90" : "text-foreground"}>{f}</span>
                   </li>
                 ))}
@@ -113,7 +113,7 @@ export default function Pricing() {
                 data-testid={`pricing-cta-${plan.name.toLowerCase().replace(" ", "-")}`}
                 className={`press mt-8 rounded-full w-full text-sm font-medium ${
                   plan.highlight
-                    ? "bg-accent text-accent-foreground hover:bg-accent/90"
+                    ? "bg-accent text-accent-foreground hover:bg-accent/90 dark:bg-primary-foreground dark:text-primary dark:hover:bg-primary-foreground/90"
                     : ""
                 }`}
                 variant={plan.highlight ? "default" : "outline"}

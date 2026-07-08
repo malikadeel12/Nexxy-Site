@@ -27,7 +27,8 @@ Nexxy = relationship-first CRM for real estate professionals. Sells better profe
 - v4: Dedicated /manifesto page (pages/Manifesto.jsx) with staggered serif line reveals + CTA; navbar & footer include "Manifesto" link; About shows teaser card linking to /manifesto
 - v5: Social share meta tags in public/index.html (OG + Twitter card, branded title/description) + generated branded og-image.png (1200×630, PIL w/ Instrument Serif) served from /og-image.png. NOTE: og:url/og:image use preview domain — must be updated to custom domain at launch.
 - Backend: POST/GET /api/leads (Lead model, ISO datetime storage)
-- v6 Human-feel polish: marquee trust bar (pausable on hover, ✦ separators), hover-lift on pillar/pricing cards (accent border + shadow), nav-link underline animation, press (active scale) on CTAs, Platform section layout fix (accent-bordered copy blocks aligned), Growth plan "$2.60 a day" note
+- v7 Dark mode (Black & Gold): .dark CSS tokens (bg 0 0% 5%, gold accent 45 80% 55%), ThemeProvider (ThemeContext.js, localStorage persist, .dark class on html), Sun/Moon toggle in navbar, dual hero videos with 1s opacity crossfade (light: cloudfront URL, dark: /hero-dark.mp4 downloaded from streamable ssm4w3), 0.5s global color transitions, .glass-wrapper + .logo-adaptive (invert filter makes navy logo gold), dark-aware pricing highlight card (black CTA/badge on gold), marquee fade dark variant
+- v7 also: pricing 2 cards (Nexxy Pro $1 first month then $49.99/mo, 11 features; Enterprise Custom), em dashes removed sitewide, mock UI floating panels + real logo + Nexxy Intelligence button + profile avatar + (512) 345-6789
 - Testing: iteration_2 — 100% backend & frontend pass (full regression, both / and /manifesto, no console errors)
 
 ## Backlog / Next
