@@ -1,225 +1,171 @@
 import {
-  ChevronDown,
-  ChevronRight,
   Search,
   Bell,
+  Phone,
   Home,
   Users,
+  GitBranch,
   MessageSquare,
-  PhoneCall,
-  Building2,
-  HeartHandshake,
-  BarChart3,
-  Route,
+  Calendar,
+  Mic,
   Megaphone,
-  BellRing,
-  Settings,
-  Check,
-  Plus,
-  MoreVertical,
+  Zap,
+  Bot,
+  BarChart2,
+  UserCheck,
+  CreditCard,
+  CloudLightning,
+  Briefcase,
+  RefreshCw,
+  DollarSign,
+  Trophy,
+  UserPlus,
+  Rocket,
+  CalendarPlus,
+  GitCommit,
 } from "lucide-react";
 
-const sidebarMain = [
-  { icon: Home, label: "Home", active: true },
-  { icon: PhoneCall, label: "Follow-ups", badge: "10" },
-  { icon: Users, label: "Contacts" },
-  { icon: MessageSquare, label: "Conversations", chevron: true },
-  { icon: Building2, label: "Listings" },
-  { icon: HeartHandshake, label: "Referrals" },
-  { icon: BarChart3, label: "Reports", chevron: true },
+const BLUE = "#2B66FF";
+const DARK = "#0A1931";
+
+const sidebarIcons = [Users, GitBranch, MessageSquare, Calendar, Mic, Megaphone, Zap, Bot, BarChart2, UserCheck, CreditCard];
+
+const metrics = [
+  { icon: Users, label: "Total Leads", value: "50", tag: "0 hot", blue: false },
+  { icon: GitBranch, label: "Active Deals", value: null, blue: true },
+  { icon: DollarSign, label: "Pipeline Value", value: null, blue: false },
+  { icon: Calendar, label: "Upcoming Appts", value: null, blue: false },
+  { icon: Trophy, label: "Win Rate", value: null, blue: false },
 ];
 
-const sidebarWorkflows = [
-  { icon: Route, label: "Nurture routes" },
-  { icon: Megaphone, label: "Campaigns" },
-  { icon: BellRing, label: "Notifications" },
-  { icon: Settings, label: "Settings" },
-];
-
-const actions = ["Log Call", "Add Contact", "Follow Up", "Schedule", "Send Update", "Create Task"];
-
-const pipeline = [
-  { name: "Active Buyers", amount: "128" },
-  { name: "Active Sellers", amount: "45" },
-  { name: "Referral Partners", amount: "62" },
-];
-
-const conversations = [
-  { date: "Jun 12", client: "Sarah Mitchell", topic: "Offer follow-up", status: "Awaiting reply", color: "text-amber-600", bg: "bg-amber-50" },
-  { date: "Jun 11", client: "The Hendersons", topic: "Closing congrats + referral", status: "Replied", color: "text-emerald-600", bg: "bg-emerald-50" },
-  { date: "Jun 10", client: "David Chen", topic: "Listing photos review", status: "Replied", color: "text-emerald-600", bg: "bg-emerald-50" },
-  { date: "Jun 09", client: "Priya Nair", topic: "First-time buyer intro call", status: "Scheduled", color: "text-emerald-600", bg: "bg-emerald-50" },
+const actions = [
+  { icon: UserPlus, label: "Add Lead" },
+  { icon: Rocket, label: "Launch Campaign" },
+  { icon: CalendarPlus, label: "Book Appointment" },
+  { icon: GitCommit, label: "Create Workflow", rotate: true },
+  { icon: Bot, label: "Ask AI" },
 ];
 
 export default function DashboardPreview() {
   return (
     <div
       data-testid="dashboard-preview"
-      className="bg-background rounded-xl border border-border text-[11px] select-none pointer-events-none font-body text-foreground"
+      className="rounded-xl overflow-hidden border border-white/80 text-[11px] select-none pointer-events-none font-body"
+      style={{ backgroundColor: "#EBF1FA", color: "#334155" }}
     >
       {/* Top bar */}
-      <div className="flex items-center justify-between px-4 py-2.5 border-b border-border">
-        <div className="flex items-center gap-1.5">
-          <div className="h-5 w-5 rounded bg-primary text-primary-foreground flex items-center justify-center font-semibold text-[10px]">
+      <div className="flex items-center justify-between px-4 py-2.5 border-b border-blue-50" style={{ backgroundColor: "#F3F7FC" }}>
+        <div className="flex items-center gap-2">
+          <div className="h-6 w-6 rounded-lg flex items-center justify-center text-white font-bold text-xs" style={{ backgroundColor: BLUE }}>
             N
           </div>
-          <span className="font-medium">Nexxy</span>
-          <ChevronDown className="h-3 w-3 text-muted-foreground" />
+          <span className="font-bold tracking-wider text-xs" style={{ color: DARK }}>NEXXY</span>
         </div>
-        <div className="flex items-center gap-1.5 rounded-md bg-secondary px-3 py-1.5 w-64">
-          <Search className="h-3 w-3 text-muted-foreground" />
-          <span className="text-muted-foreground flex-1">Search</span>
-          <span className="text-muted-foreground text-[9px] border border-border rounded px-1">⌘K</span>
+        <div className="flex items-center gap-1.5 rounded-lg bg-[#EBF1FA]/60 border border-slate-200/60 px-3 py-1.5 w-72">
+          <Search className="h-3 w-3 text-slate-400" />
+          <span className="text-slate-400">Search contacts, leads, deals...</span>
         </div>
-        <div className="flex items-center gap-2.5">
-          <span className="rounded-full bg-primary text-primary-foreground px-3 py-1 font-medium">
-            New Follow-Up
-          </span>
-          <Bell className="h-3.5 w-3.5 text-muted-foreground" />
-          <div className="h-5 w-5 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-[9px] font-semibold">
-            JB
+        <div className="flex items-center gap-2">
+          <div className="relative h-7 w-7 bg-white rounded-lg border border-slate-100 shadow-sm flex items-center justify-center text-slate-500">
+            <Bell className="h-3.5 w-3.5" />
+            <span className="absolute top-1.5 right-1.5 h-1.5 w-1.5 bg-red-500 rounded-full border border-white" />
+          </div>
+          <div className="h-7 w-7 rounded-lg flex items-center justify-center text-white shadow-lg shadow-blue-500/20" style={{ backgroundColor: BLUE }}>
+            <Phone className="h-3.5 w-3.5" />
           </div>
         </div>
       </div>
 
       <div className="flex">
-        {/* Sidebar */}
-        <div className="w-40 shrink-0 border-r border-border p-2.5 space-y-0.5">
-          {sidebarMain.map((item) => (
-            <div
-              key={item.label}
-              className={`flex items-center gap-2 rounded-md px-2 py-1.5 ${
-                item.active ? "bg-secondary font-medium" : "text-muted-foreground"
-              }`}
-            >
-              <item.icon className="h-3 w-3" />
-              <span className="flex-1">{item.label}</span>
-              {item.badge && (
-                <span className="rounded-full bg-secondary px-1.5 text-[9px] text-foreground">
-                  {item.badge}
-                </span>
-              )}
-              {item.chevron && <ChevronRight className="h-2.5 w-2.5" />}
+        {/* Icon sidebar */}
+        <div className="w-14 shrink-0 py-3 flex flex-col items-center justify-between border-r border-blue-50" style={{ backgroundColor: "#F3F7FC" }}>
+          <div className="flex flex-col gap-1 items-center w-full">
+            <div className="relative w-full flex justify-center py-1">
+              <div className="absolute left-0 top-1 bottom-1 w-0.5 rounded-r" style={{ backgroundColor: BLUE }} />
+              <div className="h-8 w-8 bg-white rounded-xl border border-blue-100/50 shadow-sm flex items-center justify-center" style={{ color: BLUE }}>
+                <Home className="h-3.5 w-3.5" />
+              </div>
             </div>
-          ))}
-          <div className="pt-3 pb-1 px-2 text-[9px] uppercase tracking-wider text-muted-foreground">
-            Workflows
+            {sidebarIcons.map((Icon, i) => (
+              <div key={i} className="h-7 w-8 rounded-xl flex items-center justify-center text-slate-400">
+                <Icon className="h-3.5 w-3.5" />
+              </div>
+            ))}
           </div>
-          {sidebarWorkflows.map((item) => (
-            <div
-              key={item.label}
-              className="flex items-center gap-2 rounded-md px-2 py-1.5 text-muted-foreground"
-            >
-              <item.icon className="h-3 w-3" />
-              <span>{item.label}</span>
+          <div className="border-t border-slate-200 pt-2 mt-1">
+            <div className="h-7 w-7 rounded-full flex items-center justify-center text-white text-[9px] font-semibold ring-2 ring-slate-200" style={{ backgroundColor: DARK }}>
+              JB
             </div>
-          ))}
+          </div>
         </div>
 
         {/* Main content */}
-        <div className="flex-1 bg-secondary/30 p-4 space-y-4">
-          <div className="flex items-center justify-between">
-            <span className="text-sm font-semibold">Welcome, Jane</span>
-          </div>
-
-          <div className="flex items-center gap-2 flex-wrap">
-            {actions.map((a, i) => (
-              <span
-                key={a}
-                className={`rounded-full px-3 py-1.5 text-[10px] font-medium ${
-                  i === 0
-                    ? "bg-accent text-accent-foreground"
-                    : "bg-background border border-border text-foreground"
-                }`}
-              >
-                {a}
-              </span>
-            ))}
-            <span className="text-[10px] text-muted-foreground ml-1">Customize</span>
-          </div>
-
-          <div className="flex gap-4">
-            {/* Relationships card */}
-            <div className="flex-1 basis-0 bg-background rounded-lg border border-border p-4">
-              <div className="flex items-center gap-1.5 text-muted-foreground">
-                <span>Relationships Nurtured</span>
-                <span className="h-3.5 w-3.5 rounded-full bg-accent/10 flex items-center justify-center">
-                  <Check className="h-2 w-2 text-accent" />
-                </span>
-              </div>
-              <div className="mt-1 text-lg font-semibold">
-                2,847<span className="text-xs text-muted-foreground"> contacts</span>
-              </div>
-              <div className="mt-2 flex items-center gap-4 text-[10px]">
-                <span className="text-muted-foreground">Last 30 Days</span>
-                <span className="text-emerald-600 font-medium">+324 new</span>
-                <span className="text-red-500 font-medium">3 at risk</span>
-              </div>
-              <svg viewBox="0 0 300 80" className="mt-3 h-20 w-full" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="balanceGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="hsl(239 84% 67%)" stopOpacity="0.15" />
-                    <stop offset="100%" stopColor="hsl(239 84% 67%)" stopOpacity="0" />
-                  </linearGradient>
-                </defs>
-                <path
-                  d="M0,60 C30,58 45,40 75,42 C105,44 120,62 150,55 C180,48 195,25 225,28 C255,31 275,15 300,10 L300,80 L0,80 Z"
-                  fill="url(#balanceGradient)"
-                />
-                <path
-                  d="M0,60 C30,58 45,40 75,42 C105,44 120,62 150,55 C180,48 195,25 225,28 C255,31 275,15 300,10"
-                  fill="none"
-                  stroke="hsl(239 84% 67%)"
-                  strokeWidth="1.5"
-                />
-              </svg>
+        <div className="flex-1 p-5 space-y-5">
+          {/* Welcome jumbotron */}
+          <div className="rounded-2xl p-5 border border-white/60 relative bg-gradient-to-br from-white via-white to-blue-50/30" style={{ boxShadow: "0 10px 30px -5px rgba(200,210,230,0.3)" }}>
+            <div className="absolute top-5 right-5 flex items-center gap-1 rounded-full px-2.5 py-1 text-[9px] font-medium border" style={{ backgroundColor: "#E6F7ED", borderColor: "#BCE8CC", color: "#1E7E44" }}>
+              <CloudLightning className="h-2.5 w-2.5" /> Live · CRM
             </div>
-
-            {/* Pipeline card */}
-            <div className="flex-1 basis-0 bg-background rounded-lg border border-border p-4">
-              <div className="flex items-center justify-between">
-                <span className="font-medium">Pipeline</span>
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <Plus className="h-3 w-3" />
-                  <MoreVertical className="h-3 w-3" />
+            <div className="text-xl font-light" style={{ color: DARK }}>Welcome back</div>
+            <p className="text-[10px] text-slate-400 mb-3">Here's what your AI assistant has prepared for you today.</p>
+            <div className="bg-white/90 border border-blue-100/50 rounded-xl p-3.5" style={{ boxShadow: "0 4px 20px rgba(220,225,240,0.4)" }}>
+              <div className="flex items-center gap-2 font-semibold text-[10px] mb-1" style={{ color: BLUE }}>
+                <div className="h-5 w-5 rounded-md flex items-center justify-center" style={{ backgroundColor: "#E8EFFF" }}>
+                  <Briefcase className="h-3 w-3" />
                 </div>
+                AI Business Summary
               </div>
-              <div>
-                {pipeline.map((p) => (
-                  <div key={p.name} className="flex items-center justify-between py-3 text-xs">
-                    <span className="text-muted-foreground">{p.name}</span>
-                    <span className="font-medium">{p.amount}</span>
-                  </div>
-                ))}
-              </div>
+              <p className="text-[10px] text-slate-500 leading-relaxed pl-7">
+                You have <span className="font-medium text-slate-700">3 hot leads</span> and{" "}
+                <span className="font-medium text-slate-700">12 active deals</span>. I recommend reaching out to{" "}
+                <span className="font-medium" style={{ color: BLUE }}>(310) 370-3438</span> first — your highest-scoring lead.
+              </p>
             </div>
           </div>
 
-          {/* Conversations */}
-          <div className="bg-background rounded-lg border border-border p-4">
-            <div className="font-medium mb-2">Recent Conversations</div>
-            <table className="w-full text-[10px]">
-              <thead>
-                <tr className="text-muted-foreground text-left">
-                  <th className="font-normal py-1.5">Date</th>
-                  <th className="font-normal py-1.5">Client</th>
-                  <th className="font-normal py-1.5">Topic</th>
-                  <th className="font-normal py-1.5">Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                {conversations.map((c) => (
-                  <tr key={c.client} className="border-t border-border">
-                    <td className="py-2 text-muted-foreground">{c.date}</td>
-                    <td className="py-2 font-medium">{c.client}</td>
-                    <td className="py-2 text-muted-foreground">{c.topic}</td>
-                    <td className="py-2">
-                      <span className={`rounded-full px-2 py-0.5 ${c.bg} ${c.color}`}>{c.status}</span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          {/* Live Overview */}
+          <div className="space-y-2.5">
+            <div className="flex items-center justify-between">
+              <span className="font-semibold text-xs" style={{ color: DARK }}>Live Overview</span>
+              <div className="h-6 w-6 bg-white rounded-md border border-slate-100 flex items-center justify-center text-slate-400" style={{ boxShadow: "0 4px 20px rgba(220,225,240,0.4)" }}>
+                <RefreshCw className="h-3 w-3" />
+              </div>
+            </div>
+            <div className="grid grid-cols-5 gap-3">
+              {metrics.map((m) => (
+                <div key={m.label} className="bg-white rounded-xl p-3.5 border border-white/80 relative h-24 flex flex-col justify-between" style={{ boxShadow: "0 4px 20px rgba(220,225,240,0.4)" }}>
+                  <div className="h-7 w-7 rounded-lg flex items-center justify-center" style={m.blue ? { backgroundColor: "#E8EFFF", color: BLUE } : { backgroundColor: "#F4F7FC", color: "#64748b" }}>
+                    <m.icon className="h-3.5 w-3.5" />
+                  </div>
+                  {m.tag && (
+                    <span className="absolute top-3.5 right-3.5 text-[8px] font-medium text-slate-400 bg-slate-50 px-1.5 py-0.5 rounded-full">{m.tag}</span>
+                  )}
+                  <div>
+                    {m.value ? (
+                      <div className="text-base font-semibold" style={{ color: DARK }}>{m.value}</div>
+                    ) : (
+                      <div className="h-4 w-12 bg-slate-100 rounded mb-0.5" />
+                    )}
+                    <div className="text-[8px] font-bold tracking-wider text-slate-400 uppercase">{m.label}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick Actions */}
+          <div className="space-y-2.5">
+            <span className="font-semibold text-xs" style={{ color: DARK }}>Quick Actions</span>
+            <div className="grid grid-cols-5 gap-3">
+              {actions.map((a) => (
+                <div key={a.label} className="bg-white/80 rounded-xl p-3.5 border border-white/80 flex flex-col items-center justify-center gap-2 h-20" style={{ boxShadow: "0 4px 20px rgba(220,225,240,0.4)" }}>
+                  <div className="h-7 w-7 rounded-full flex items-center justify-center text-slate-600 bg-slate-50">
+                    <a.icon className={`h-3.5 w-3.5 ${a.rotate ? "rotate-45" : ""}`} />
+                  </div>
+                  <span className="text-[9px] font-medium text-slate-600 text-center leading-tight">{a.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
