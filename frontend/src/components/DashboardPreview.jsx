@@ -25,9 +25,73 @@ import {
   GitCommit,
   Sparkles,
 } from "lucide-react";
+import { useTheme } from "@/ThemeContext";
 
 const BLUE = "#2B66FF";
-const DARK = "#0A1931";
+
+const light = {
+  base: "#EBF1FA",
+  panel: "rgba(255,255,255,0.8)",
+  panelBorder: "rgba(255,255,255,0.8)",
+  card: "#ffffff",
+  cardBorder: "rgba(255,255,255,0.8)",
+  heading: "#0A1931",
+  text: "#334155",
+  subtle: "#94a3b8",
+  label: "#94a3b8",
+  iconBg: "#F4F7FC",
+  iconColor: "#64748b",
+  blueIconBg: "#E8EFFF",
+  searchBg: "rgba(235,241,250,0.6)",
+  searchBorder: "rgba(226,232,240,0.6)",
+  jumboFrom: "#ffffff",
+  jumboTo: "rgba(239,246,255,0.3)",
+  capsuleBg: "rgba(255,255,255,0.9)",
+  capsuleBorder: "rgba(219,234,254,0.5)",
+  capsuleText: "#64748b",
+  strong: "#334155",
+  livePillBg: "#E6F7ED",
+  livePillBorder: "#BCE8CC",
+  livePillText: "#1E7E44",
+  bellBg: "#ffffff",
+  bellBorder: "#f1f5f9",
+  divider: "#e2e8f0",
+  actionCircle: "#f8fafc",
+  actionText: "#475569",
+  shadow: "0 4px 20px rgba(220,225,240,0.4)",
+};
+
+const dark = {
+  base: "#0B0E14",
+  panel: "rgba(21,26,36,0.85)",
+  panelBorder: "rgba(255,255,255,0.06)",
+  card: "#151A24",
+  cardBorder: "rgba(255,255,255,0.06)",
+  heading: "#E7EAF2",
+  text: "#B7BECD",
+  subtle: "#6D7688",
+  label: "#6D7688",
+  iconBg: "#1B2130",
+  iconColor: "#8B93A5",
+  blueIconBg: "rgba(43,102,255,0.16)",
+  searchBg: "rgba(255,255,255,0.05)",
+  searchBorder: "rgba(255,255,255,0.08)",
+  jumboFrom: "#151A24",
+  jumboTo: "rgba(43,102,255,0.07)",
+  capsuleBg: "rgba(11,14,20,0.7)",
+  capsuleBorder: "rgba(43,102,255,0.25)",
+  capsuleText: "#8B93A5",
+  strong: "#DDE2EC",
+  livePillBg: "rgba(30,126,68,0.15)",
+  livePillBorder: "rgba(74,222,128,0.3)",
+  livePillText: "#4ADE80",
+  bellBg: "#1B2130",
+  bellBorder: "rgba(255,255,255,0.08)",
+  divider: "rgba(255,255,255,0.1)",
+  actionCircle: "#1B2130",
+  actionText: "#A6ADBF",
+  shadow: "0 4px 20px rgba(0,0,0,0.4)",
+};
 
 const sidebarIcons = [Users, GitBranch, MessageSquare, Calendar, Mic, Megaphone, Zap, Bot, BarChart2, UserCheck, CreditCard];
 
@@ -48,20 +112,23 @@ const actions = [
 ];
 
 export default function DashboardPreview() {
+  const { isDark } = useTheme();
+  const t = isDark ? dark : light;
+
   return (
     <div
       data-testid="dashboard-preview"
-      className="rounded-xl overflow-hidden border border-white/80 text-[11px] select-none pointer-events-none font-body"
-      style={{ backgroundColor: "#EBF1FA", color: "#334155" }}
+      className="rounded-xl overflow-hidden border text-[11px] select-none pointer-events-none font-body"
+      style={{ backgroundColor: t.base, color: t.text, borderColor: t.cardBorder }}
     >
       {/* Top bar: floating rounded panel */}
-      <div className="mx-3 mt-3 flex items-center justify-between px-4 py-2.5 rounded-2xl bg-white/80 border border-white/80" style={{ boxShadow: "0 4px 20px rgba(220,225,240,0.4)" }}>
+      <div className="mx-3 mt-3 flex items-center justify-between px-4 py-2.5 rounded-2xl border" style={{ backgroundColor: t.panel, borderColor: t.panelBorder, boxShadow: t.shadow }}>
         <div className="flex items-center gap-2">
-          <img src="/nexxy-logo.png" alt="Nexxy" className="h-3.5 w-auto" />
+          <img src="/nexxy-logo.png" alt="Nexxy" className="h-3.5 w-auto" style={isDark ? { filter: "invert(1) hue-rotate(15deg) saturate(1.1) brightness(1.05)" } : undefined} />
         </div>
-        <div className="hidden sm:flex items-center gap-1.5 rounded-lg bg-[#EBF1FA]/60 border border-slate-200/60 px-3 py-1.5 w-44 md:w-72">
-          <Search className="h-3 w-3 text-slate-400" />
-          <span className="text-slate-400">Search contacts, leads, deals...</span>
+        <div className="hidden sm:flex items-center gap-1.5 rounded-lg border px-3 py-1.5 w-44 md:w-72" style={{ backgroundColor: t.searchBg, borderColor: t.searchBorder }}>
+          <Search className="h-3 w-3" style={{ color: t.subtle }} />
+          <span style={{ color: t.subtle }}>Search contacts, leads, deals...</span>
         </div>
         <div className="flex items-center gap-2">
           <div
@@ -72,7 +139,7 @@ export default function DashboardPreview() {
             <Sparkles className="h-3 w-3" />
             <span className="text-[10px] whitespace-nowrap">Nexxy Intelligence</span>
           </div>
-          <div className="relative h-7 w-7 bg-white rounded-lg border border-slate-100 shadow-sm flex items-center justify-center text-slate-500">
+          <div className="relative h-7 w-7 rounded-lg border shadow-sm flex items-center justify-center" style={{ backgroundColor: t.bellBg, borderColor: t.bellBorder, color: t.iconColor }}>
             <Bell className="h-3.5 w-3.5" />
             <span className="absolute top-1.5 right-1.5 h-1.5 w-1.5 bg-red-500 rounded-full border border-white" />
           </div>
@@ -84,25 +151,26 @@ export default function DashboardPreview() {
 
       <div className="flex gap-0 px-3 pb-3 pt-3">
         {/* Icon sidebar: floating rounded panel */}
-        <div className="w-14 shrink-0 py-3 flex flex-col items-center justify-between self-start rounded-2xl bg-white/80 border border-white/80" style={{ boxShadow: "0 4px 20px rgba(220,225,240,0.4)" }}>
+        <div className="w-14 shrink-0 py-3 flex flex-col items-center justify-between self-start rounded-2xl border" style={{ backgroundColor: t.panel, borderColor: t.panelBorder, boxShadow: t.shadow }}>
           <div className="flex flex-col gap-1 items-center w-full">
             <div className="relative w-full flex justify-center py-1">
               <div className="absolute left-0 top-1 bottom-1 w-0.5 rounded-r" style={{ backgroundColor: BLUE }} />
-              <div className="h-8 w-8 rounded-xl border border-blue-100/50 shadow-sm flex items-center justify-center" style={{ color: BLUE, backgroundColor: "#E8EFFF" }}>
+              <div className="h-8 w-8 rounded-xl shadow-sm flex items-center justify-center" style={{ color: isDark ? "#7EA2FF" : BLUE, backgroundColor: t.blueIconBg }}>
                 <Home className="h-3.5 w-3.5" />
               </div>
             </div>
             {sidebarIcons.map((Icon, i) => (
-              <div key={i} className="h-7 w-8 rounded-xl flex items-center justify-center text-slate-400">
+              <div key={i} className="h-7 w-8 rounded-xl flex items-center justify-center" style={{ color: t.subtle }}>
                 <Icon className="h-3.5 w-3.5" />
               </div>
             ))}
           </div>
-          <div className="border-t border-slate-200 pt-2 mt-1">
+          <div className="pt-2 mt-1 border-t" style={{ borderColor: t.divider }}>
             <img
               src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
               alt="Profile"
-              className="h-7 w-7 rounded-full object-cover ring-2 ring-slate-200"
+              className="h-7 w-7 rounded-full object-cover ring-2"
+              style={{ "--tw-ring-color": t.divider }}
             />
           </div>
         </div>
@@ -110,23 +178,23 @@ export default function DashboardPreview() {
         {/* Main content */}
         <div className="flex-1 pl-3 space-y-5">
           {/* Welcome jumbotron */}
-          <div className="rounded-2xl p-5 border border-white/60 relative bg-gradient-to-br from-white via-white to-blue-50/30" style={{ boxShadow: "0 10px 30px -5px rgba(200,210,230,0.3)" }}>
-            <div className="absolute top-5 right-5 flex items-center gap-1 rounded-full px-2.5 py-1 text-[9px] font-medium border" style={{ backgroundColor: "#E6F7ED", borderColor: "#BCE8CC", color: "#1E7E44" }}>
+          <div className="rounded-2xl p-5 border relative" style={{ background: `linear-gradient(135deg, ${t.jumboFrom} 0%, ${t.jumboFrom} 55%, ${t.jumboTo} 100%)`, borderColor: t.cardBorder, boxShadow: t.shadow }}>
+            <div className="absolute top-5 right-5 flex items-center gap-1 rounded-full px-2.5 py-1 text-[9px] font-medium border" style={{ backgroundColor: t.livePillBg, borderColor: t.livePillBorder, color: t.livePillText }}>
               <CloudLightning className="h-2.5 w-2.5" /> Live · CRM
             </div>
-            <div className="text-xl font-light" style={{ color: DARK }}>Welcome back</div>
-            <p className="text-[10px] text-slate-400 mb-3">Here's what your AI assistant has prepared for you today.</p>
-            <div className="bg-white/90 border border-blue-100/50 rounded-xl p-3.5" style={{ boxShadow: "0 4px 20px rgba(220,225,240,0.4)" }}>
-              <div className="flex items-center gap-2 font-semibold text-[10px] mb-1" style={{ color: BLUE }}>
-                <div className="h-5 w-5 rounded-md flex items-center justify-center" style={{ backgroundColor: "#E8EFFF" }}>
+            <div className="text-xl font-light" style={{ color: t.heading }}>Welcome back</div>
+            <p className="text-[10px] mb-3" style={{ color: t.subtle }}>Here's what your AI assistant has prepared for you today.</p>
+            <div className="rounded-xl p-3.5 border" style={{ backgroundColor: t.capsuleBg, borderColor: t.capsuleBorder, boxShadow: t.shadow }}>
+              <div className="flex items-center gap-2 font-semibold text-[10px] mb-1" style={{ color: isDark ? "#7EA2FF" : BLUE }}>
+                <div className="h-5 w-5 rounded-md flex items-center justify-center" style={{ backgroundColor: t.blueIconBg }}>
                   <Briefcase className="h-3 w-3" />
                 </div>
                 AI Business Summary
               </div>
-              <p className="text-[10px] text-slate-500 leading-relaxed pl-7">
-                You have <span className="font-medium text-slate-700">3 hot leads</span> and{" "}
-                <span className="font-medium text-slate-700">12 active deals</span>. I recommend reaching out to{" "}
-                <span className="font-medium" style={{ color: BLUE }}>(512) 345-6789</span> first, your highest-scoring lead.
+              <p className="text-[10px] leading-relaxed pl-7" style={{ color: t.capsuleText }}>
+                You have <span className="font-medium" style={{ color: t.strong }}>3 hot leads</span> and{" "}
+                <span className="font-medium" style={{ color: t.strong }}>12 active deals</span>. I recommend reaching out to{" "}
+                <span className="font-medium" style={{ color: isDark ? "#7EA2FF" : BLUE }}>(512) 345-6789</span> first, your highest-scoring lead.
               </p>
             </div>
           </div>
@@ -134,27 +202,23 @@ export default function DashboardPreview() {
           {/* Live Overview */}
           <div className="space-y-2.5">
             <div className="flex items-center justify-between">
-              <span className="font-semibold text-xs" style={{ color: DARK }}>Live Overview</span>
-              <div className="h-6 w-6 bg-white rounded-md border border-slate-100 flex items-center justify-center text-slate-400" style={{ boxShadow: "0 4px 20px rgba(220,225,240,0.4)" }}>
+              <span className="font-semibold text-xs" style={{ color: t.heading }}>Live Overview</span>
+              <div className="h-6 w-6 rounded-md border flex items-center justify-center" style={{ backgroundColor: t.card, borderColor: t.cardBorder, color: t.subtle, boxShadow: t.shadow }}>
                 <RefreshCw className="h-3 w-3" />
               </div>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
               {metrics.map((m) => (
-                <div key={m.label} className="bg-white rounded-xl p-3.5 border border-white/80 relative h-24 flex flex-col justify-between" style={{ boxShadow: "0 4px 20px rgba(220,225,240,0.4)" }}>
-                  <div className="h-7 w-7 rounded-lg flex items-center justify-center" style={m.blue ? { backgroundColor: "#E8EFFF", color: BLUE } : { backgroundColor: "#F4F7FC", color: "#64748b" }}>
+                <div key={m.label} className="rounded-xl p-3.5 border relative h-24 flex flex-col justify-between" style={{ backgroundColor: t.card, borderColor: t.cardBorder, boxShadow: t.shadow }}>
+                  <div className="h-7 w-7 rounded-lg flex items-center justify-center" style={m.blue ? { backgroundColor: t.blueIconBg, color: isDark ? "#7EA2FF" : BLUE } : { backgroundColor: t.iconBg, color: t.iconColor }}>
                     <m.icon className="h-3.5 w-3.5" />
                   </div>
                   {m.tag && (
-                    <span className="absolute top-3.5 right-3.5 text-[8px] font-medium text-slate-400 bg-slate-50 px-1.5 py-0.5 rounded-full">{m.tag}</span>
+                    <span className="absolute top-3.5 right-3.5 text-[8px] font-medium px-1.5 py-0.5 rounded-full" style={{ color: t.subtle, backgroundColor: t.iconBg }}>{m.tag}</span>
                   )}
                   <div>
-                    {m.value ? (
-                      <div className="text-base font-semibold" style={{ color: DARK }}>{m.value}</div>
-                    ) : (
-                      <div className="h-4 w-12 bg-slate-100 rounded mb-0.5" />
-                    )}
-                    <div className="text-[8px] font-bold tracking-wider text-slate-400 uppercase">{m.label}</div>
+                    <div className="text-base font-semibold" style={{ color: t.heading }}>{m.value}</div>
+                    <div className="text-[8px] font-bold tracking-wider uppercase" style={{ color: t.label }}>{m.label}</div>
                   </div>
                 </div>
               ))}
@@ -163,14 +227,14 @@ export default function DashboardPreview() {
 
           {/* Quick Actions */}
           <div className="space-y-2.5">
-            <span className="font-semibold text-xs" style={{ color: DARK }}>Quick Actions</span>
+            <span className="font-semibold text-xs" style={{ color: t.heading }}>Quick Actions</span>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
               {actions.map((a) => (
-                <div key={a.label} className="bg-white/80 rounded-xl p-3.5 border border-white/80 flex flex-col items-center justify-center gap-2 h-20" style={{ boxShadow: "0 4px 20px rgba(220,225,240,0.4)" }}>
-                  <div className="h-7 w-7 rounded-full flex items-center justify-center text-slate-600 bg-slate-50">
+                <div key={a.label} className="rounded-xl p-3.5 border flex flex-col items-center justify-center gap-2 h-20" style={{ backgroundColor: t.card, borderColor: t.cardBorder, boxShadow: t.shadow }}>
+                  <div className="h-7 w-7 rounded-full flex items-center justify-center" style={{ backgroundColor: t.actionCircle, color: t.actionText }}>
                     <a.icon className={`h-3.5 w-3.5 ${a.rotate ? "rotate-45" : ""}`} />
                   </div>
-                  <span className="text-[9px] font-medium text-slate-600 text-center leading-tight">{a.label}</span>
+                  <span className="text-[9px] font-medium text-center leading-tight" style={{ color: t.actionText }}>{a.label}</span>
                 </div>
               ))}
             </div>
