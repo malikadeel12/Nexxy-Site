@@ -28,6 +28,7 @@ import {
 import { useTheme } from "@/ThemeContext";
 
 const BLUE = "#2B66FF";
+const GOLD = "#E2B93B";
 
 const light = {
   base: "#EBF1FA",
@@ -42,6 +43,10 @@ const light = {
   iconBg: "#F4F7FC",
   iconColor: "#64748b",
   blueIconBg: "#E8EFFF",
+  accent: BLUE,
+  accentText: "#ffffff",
+  accentGradient: "linear-gradient(135deg, #2B66FF 0%, #6366F1 100%)",
+  accentShadow: "shadow-blue-500/20",
   searchBg: "rgba(235,241,250,0.6)",
   searchBorder: "rgba(226,232,240,0.6)",
   jumboFrom: "#ffffff",
@@ -62,35 +67,39 @@ const light = {
 };
 
 const dark = {
-  base: "#0B0E14",
-  panel: "rgba(21,26,36,0.85)",
-  panelBorder: "rgba(255,255,255,0.06)",
-  card: "#151A24",
-  cardBorder: "rgba(255,255,255,0.06)",
-  heading: "#E7EAF2",
-  text: "#B7BECD",
-  subtle: "#6D7688",
-  label: "#6D7688",
-  iconBg: "#1B2130",
-  iconColor: "#8B93A5",
-  blueIconBg: "rgba(43,102,255,0.16)",
+  base: "#0A0A0A",
+  panel: "rgba(22,22,22,0.9)",
+  panelBorder: "rgba(226,185,59,0.14)",
+  card: "#141414",
+  cardBorder: "rgba(226,185,59,0.1)",
+  heading: "#F2EDDF",
+  text: "#C9C4B4",
+  subtle: "#797363",
+  label: "#797363",
+  iconBg: "#1D1B14",
+  iconColor: "#A39C87",
+  blueIconBg: "rgba(226,185,59,0.14)",
+  accent: GOLD,
+  accentText: "#0A0A0A",
+  accentGradient: "linear-gradient(135deg, #E2B93B 0%, #C9971E 100%)",
+  accentShadow: "shadow-yellow-500/20",
   searchBg: "rgba(255,255,255,0.05)",
-  searchBorder: "rgba(255,255,255,0.08)",
-  jumboFrom: "#151A24",
-  jumboTo: "rgba(43,102,255,0.07)",
-  capsuleBg: "rgba(11,14,20,0.7)",
-  capsuleBorder: "rgba(43,102,255,0.25)",
-  capsuleText: "#8B93A5",
-  strong: "#DDE2EC",
-  livePillBg: "rgba(30,126,68,0.15)",
-  livePillBorder: "rgba(74,222,128,0.3)",
-  livePillText: "#4ADE80",
-  bellBg: "#1B2130",
-  bellBorder: "rgba(255,255,255,0.08)",
-  divider: "rgba(255,255,255,0.1)",
-  actionCircle: "#1B2130",
-  actionText: "#A6ADBF",
-  shadow: "0 4px 20px rgba(0,0,0,0.4)",
+  searchBorder: "rgba(226,185,59,0.12)",
+  jumboFrom: "#141414",
+  jumboTo: "rgba(226,185,59,0.07)",
+  capsuleBg: "rgba(10,10,10,0.7)",
+  capsuleBorder: "rgba(226,185,59,0.25)",
+  capsuleText: "#A39C87",
+  strong: "#EDE7D6",
+  livePillBg: "rgba(226,185,59,0.12)",
+  livePillBorder: "rgba(226,185,59,0.35)",
+  livePillText: "#E2B93B",
+  bellBg: "#1D1B14",
+  bellBorder: "rgba(226,185,59,0.15)",
+  divider: "rgba(226,185,59,0.18)",
+  actionCircle: "#1D1B14",
+  actionText: "#C9C4B4",
+  shadow: "0 4px 20px rgba(0,0,0,0.5)",
 };
 
 const sidebarIcons = [Users, GitBranch, MessageSquare, Calendar, Mic, Megaphone, Zap, Bot, BarChart2, UserCheck, CreditCard];
@@ -133,8 +142,8 @@ export default function DashboardPreview() {
         <div className="flex items-center gap-2">
           <div
             data-testid="nexxy-intelligence-button"
-            className="h-7 rounded-lg flex items-center gap-1.5 px-3 text-white font-medium shadow-lg shadow-blue-500/20"
-            style={{ background: "linear-gradient(135deg, #2B66FF 0%, #6366F1 100%)" }}
+            className="h-7 rounded-lg flex items-center gap-1.5 px-3 font-medium shadow-lg"
+            style={{ background: t.accentGradient, color: t.accentText }}
           >
             <Sparkles className="h-3 w-3" />
             <span className="text-[10px] whitespace-nowrap">Nexxy Intelligence</span>
@@ -143,7 +152,7 @@ export default function DashboardPreview() {
             <Bell className="h-3.5 w-3.5" />
             <span className="absolute top-1.5 right-1.5 h-1.5 w-1.5 bg-red-500 rounded-full border border-white" />
           </div>
-          <div className="h-7 w-7 rounded-lg flex items-center justify-center text-white shadow-lg shadow-blue-500/20" style={{ backgroundColor: BLUE }}>
+          <div className="h-7 w-7 rounded-lg flex items-center justify-center shadow-lg" style={{ backgroundColor: t.accent, color: t.accentText }}>
             <Phone className="h-3.5 w-3.5" />
           </div>
         </div>
@@ -185,7 +194,7 @@ export default function DashboardPreview() {
             <div className="text-xl font-light" style={{ color: t.heading }}>Welcome back</div>
             <p className="text-[10px] mb-3" style={{ color: t.subtle }}>Here's what your AI assistant has prepared for you today.</p>
             <div className="rounded-xl p-3.5 border" style={{ backgroundColor: t.capsuleBg, borderColor: t.capsuleBorder, boxShadow: t.shadow }}>
-              <div className="flex items-center gap-2 font-semibold text-[10px] mb-1" style={{ color: isDark ? "#7EA2FF" : BLUE }}>
+              <div className="flex items-center gap-2 font-semibold text-[10px] mb-1" style={{ color: t.accent }}>
                 <div className="h-5 w-5 rounded-md flex items-center justify-center" style={{ backgroundColor: t.blueIconBg }}>
                   <Briefcase className="h-3 w-3" />
                 </div>
@@ -194,7 +203,7 @@ export default function DashboardPreview() {
               <p className="text-[10px] leading-relaxed pl-7" style={{ color: t.capsuleText }}>
                 You have <span className="font-medium" style={{ color: t.strong }}>3 hot leads</span> and{" "}
                 <span className="font-medium" style={{ color: t.strong }}>12 active deals</span>. I recommend reaching out to{" "}
-                <span className="font-medium" style={{ color: isDark ? "#7EA2FF" : BLUE }}>(512) 345-6789</span> first, your highest-scoring lead.
+                <span className="font-medium" style={{ color: t.accent }}>(512) 345-6789</span> first, your highest-scoring lead.
               </p>
             </div>
           </div>
@@ -210,7 +219,7 @@ export default function DashboardPreview() {
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
               {metrics.map((m) => (
                 <div key={m.label} className="rounded-xl p-3.5 border relative h-24 flex flex-col justify-between" style={{ backgroundColor: t.card, borderColor: t.cardBorder, boxShadow: t.shadow }}>
-                  <div className="h-7 w-7 rounded-lg flex items-center justify-center" style={m.blue ? { backgroundColor: t.blueIconBg, color: isDark ? "#7EA2FF" : BLUE } : { backgroundColor: t.iconBg, color: t.iconColor }}>
+                  <div className="h-7 w-7 rounded-lg flex items-center justify-center" style={m.blue ? { backgroundColor: t.blueIconBg, color: t.accent } : { backgroundColor: t.iconBg, color: t.iconColor }}>
                     <m.icon className="h-3.5 w-3.5" />
                   </div>
                   {m.tag && (
