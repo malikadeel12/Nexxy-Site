@@ -31,7 +31,9 @@ dist/
 dist
 
 # Environment files (comprehensive coverage)
-
+.env
+.env.*
+!.env.example
 *token.json*
 *credentials.json*
 
@@ -76,6 +78,8 @@ agenthub/agents/youtube/db
 # Build caches
 .cache/
 
+# Test reports and agent memory
+test_reports/
 memory/test_credentials.md
 
 # Mobile development
