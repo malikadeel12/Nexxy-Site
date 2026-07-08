@@ -2,7 +2,9 @@ export default function Footer() {
   return (
     <footer data-testid="footer" className="px-6 md:px-12 lg:px-20 py-10 border-t border-border font-body">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <span className="text-lg font-semibold tracking-tight text-foreground">✦ Nexxy</span>
+        <a href="/#home" className="flex items-center">
+          <img src="/nexxy-logo.png" alt="Nexxy" className="h-5 w-auto" />
+        </a>
         <div className="flex items-center gap-8 text-sm text-muted-foreground">
           <a href="/#home" className="hover:text-foreground transition-colors duration-200">Home</a>
           <a href="/#pricing" className="hover:text-foreground transition-colors duration-200">Pricing</a>

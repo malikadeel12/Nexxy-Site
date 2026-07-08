@@ -17,9 +17,9 @@ export default function Navbar() {
       <a
         href="/#home"
         data-testid="navbar-logo"
-        className="text-xl font-semibold tracking-tight text-foreground"
+        className="flex items-center"
       >
-        ✦ Nexxy
+        <img src="/nexxy-logo.png" alt="Nexxy" className="h-6 md:h-7 w-auto" />
       </a>
       <div className="hidden md:flex items-center gap-8">
         {links.map((link) => (
