@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
 
 const links = [
-  { label: "Home", href: "#home" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "About", href: "/#about" },
+  { label: "Manifesto", href: "/manifesto" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -14,7 +15,7 @@ export default function Navbar() {
       className="flex items-center justify-between px-6 md:px-12 lg:px-20 py-5 font-body relative z-20"
     >
       <a
-        href="#home"
+        href="/#home"
         data-testid="navbar-logo"
         className="text-xl font-semibold tracking-tight text-foreground"
       >
@@ -37,7 +38,7 @@ export default function Navbar() {
         className="rounded-full px-5 text-sm font-medium"
         asChild
       >
-        <a href="#contact">Get Started</a>
+        <a href="/#contact">Get Started</a>
       </Button>
     </nav>
   );

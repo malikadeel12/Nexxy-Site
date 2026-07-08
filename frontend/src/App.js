@@ -10,6 +10,7 @@ import Pricing from "@/components/Pricing";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Manifesto from "@/pages/Manifesto";
 
 const Landing = () => (
   <div className="bg-background">
@@ -34,6 +35,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />
+          <Route path="/manifesto" element={<Manifesto />} />
         </Routes>
       </BrowserRouter>
     </div>
