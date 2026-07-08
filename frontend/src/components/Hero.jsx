@@ -58,7 +58,7 @@ export default function Hero() {
           Real estate isn't won by the loudest marketer. It's won by the professional who
           consistently stays present, follows up thoughtfully, and builds trust over time.
           Nexxy combines AI, automation, and relationship intelligence to help you create
-          meaningful client experiences—without adding more work to your day.
+          meaningful client experiences, without adding more work to your day.
         </motion.p>
 
         <motion.div

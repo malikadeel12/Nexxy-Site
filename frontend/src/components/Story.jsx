@@ -22,7 +22,7 @@ export default function Story() {
             <p className="text-muted-foreground font-body leading-relaxed text-lg">
               Most professionals don't lose opportunities because they lack skill. They lose
               them because life gets busy. A forgotten follow-up. An unanswered message. A
-              delayed reply. Nexxy makes consistency effortless—helping every client feel
+              delayed reply. Nexxy makes consistency effortless, helping every client feel
               remembered, valued, and supported.
             </p>
           </motion.div>
@@ -46,7 +46,7 @@ export default function Story() {
           >
             Every message. Every meeting. Every follow-up. Every promise kept. Those small
             moments shape your reputation. Technology should help you create more of
-            them—not replace them. That's why Nexxy exists.
+            them, not replace them. That's why Nexxy exists.
           </motion.p>
         </div>
       </section>

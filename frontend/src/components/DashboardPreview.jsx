@@ -54,7 +54,7 @@ export default function DashboardPreview() {
       className="rounded-xl overflow-hidden border border-white/80 text-[11px] select-none pointer-events-none font-body"
       style={{ backgroundColor: "#EBF1FA", color: "#334155" }}
     >
-      {/* Top bar — floating rounded panel */}
+      {/* Top bar: floating rounded panel */}
       <div className="mx-3 mt-3 flex items-center justify-between px-4 py-2.5 rounded-2xl bg-white/80 border border-white/80" style={{ boxShadow: "0 4px 20px rgba(220,225,240,0.4)" }}>
         <div className="flex items-center gap-2">
           <img src="/nexxy-logo.png" alt="Nexxy" className="h-3.5 w-auto" />
@@ -83,7 +83,7 @@ export default function DashboardPreview() {
       </div>
 
       <div className="flex gap-0 px-3 pb-3 pt-3">
-        {/* Icon sidebar — floating rounded panel */}
+        {/* Icon sidebar: floating rounded panel */}
         <div className="w-14 shrink-0 py-3 flex flex-col items-center justify-between self-start rounded-2xl bg-white/80 border border-white/80" style={{ boxShadow: "0 4px 20px rgba(220,225,240,0.4)" }}>
           <div className="flex flex-col gap-1 items-center w-full">
             <div className="relative w-full flex justify-center py-1">
@@ -126,7 +126,7 @@ export default function DashboardPreview() {
               <p className="text-[10px] text-slate-500 leading-relaxed pl-7">
                 You have <span className="font-medium text-slate-700">3 hot leads</span> and{" "}
                 <span className="font-medium text-slate-700">12 active deals</span>. I recommend reaching out to{" "}
-                <span className="font-medium" style={{ color: BLUE }}>(512) 345-6789</span> first — your highest-scoring lead.
+                <span className="font-medium" style={{ color: BLUE }}>(512) 345-6789</span> first, your highest-scoring lead.
               </p>
             </div>
           </div>

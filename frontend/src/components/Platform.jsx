@@ -6,13 +6,13 @@ const blocks = [
     icon: Megaphone,
     eyebrow: "Show Up Everywhere",
     headline: "Teach More. Show Up Consistently. Become The Professional People Remember.",
-    copy: "Modern real estate professionals aren't just agents. They're educators. Trusted advisors. Community builders. Nexxy helps you stay visible across every platform with thoughtful, consistent content—so your audience remembers you long before they need you.",
+    copy: "Modern real estate professionals aren't just agents. They're educators. Trusted advisors. Community builders. Nexxy helps you stay visible across every platform with thoughtful, consistent content, so your audience remembers you long before they need you.",
   },
   {
     icon: Sparkles,
     eyebrow: "AI That Works Quietly In The Background",
     headline: "Great Technology Shouldn't Demand Attention. It Should Remove Friction.",
-    copy: "Nexxy uses AI where it matters most—drafting follow-ups, organizing conversations, surfacing opportunities, and handling repetitive work—so you can focus on people, not processes.",
+    copy: "Nexxy uses AI where it matters most: drafting follow-ups, organizing conversations, surfacing opportunities, and handling repetitive work, so you can focus on people, not processes.",
   },
   {
     icon: BookOpen,
@@ -76,7 +76,7 @@ export default function Platform() {
             <div className="h-9 w-9 rounded-full bg-accent/15 text-accent flex items-center justify-center text-xs font-semibold">MK</div>
             <div className="text-sm">
               <span className="font-medium text-foreground">Maya Krishnan</span>
-              <span className="text-muted-foreground"> — Residential Realtor, Crestline Group</span>
+              <span className="text-muted-foreground">, Residential Realtor, Crestline Group</span>
             </div>
           </figcaption>
         </motion.figure>

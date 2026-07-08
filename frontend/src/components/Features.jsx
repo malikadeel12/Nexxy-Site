@@ -45,7 +45,7 @@ export default function Features() {
   return (
     <section id="features" data-testid="features-section" className="px-6 md:px-12 lg:px-20 pt-[22rem] md:pt-[28rem] pb-24 md:pb-32 border-t border-border bg-secondary/40">
       <div className="max-w-6xl mx-auto">
-        {/* Trust bar — beliefs, not logos (marquee) */}
+        {/* Trust bar: beliefs, not logos (marquee) */}
         <motion.div
           {...fadeUp}
           transition={{ duration: 0.6 }}

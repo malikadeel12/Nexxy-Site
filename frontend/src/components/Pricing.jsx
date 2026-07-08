@@ -29,7 +29,7 @@ const plans = [
     name: "Enterprise",
     price: "Custom",
     period: "",
-    desc: "For teams and brokerages. SSO, SLAs, security reviews — we speak procurement.",
+    desc: "For teams and brokerages. SSO, SLAs, security reviews. We speak procurement.",
     note: null,
     features: [
       "Everything in Nexxy Pro",
@@ -60,7 +60,7 @@ export default function Pricing() {
             <em className="italic">$1</em> for Your First Month
           </h2>
           <p className="mt-4 text-muted-foreground font-body leading-relaxed">
-            Then just $49.99/month after that — less than a family dinner.
+            Then just $49.99/month after that. Less than a family dinner.
           </p>
         </motion.div>
 
@@ -126,7 +126,7 @@ export default function Pricing() {
         </div>
 
         <p className="mt-10 text-center text-sm text-muted-foreground font-body">
-          Prices in USD. Cancel anytime — no long-term contracts.
+          Prices in USD. Cancel anytime. No long-term contracts.
         </p>
       </div>
     </section>

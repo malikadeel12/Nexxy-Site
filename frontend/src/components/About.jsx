@@ -21,7 +21,7 @@ export default function About() {
           <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.15 }} className="lg:col-span-6 lg:col-start-7">
             <p className="text-muted-foreground font-body leading-relaxed">
               Nexxy wasn't created because the world needed another CRM. It was created because
-              too many professionals were losing opportunities—not because they lacked talent,
+              too many professionals were losing opportunities, not because they lacked talent,
               but because they lacked time.
             </p>
             <p className="mt-4 text-muted-foreground font-body leading-relaxed">
@@ -49,7 +49,7 @@ export default function About() {
             </h3>
             <p className="mt-4 text-muted-foreground font-body leading-relaxed max-w-xl">
               People don't recommend software. They recommend experiences. Read what we
-              believe — and why Nexxy exists.
+              believe, and why Nexxy exists.
             </p>
           </div>
           <a

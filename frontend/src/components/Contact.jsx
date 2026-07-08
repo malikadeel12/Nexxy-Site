@@ -47,7 +47,7 @@ export default function Contact() {
           </h2>
           <p className="mt-6 text-muted-foreground font-body leading-relaxed max-w-md">
             Book a demo, ask a blunt pricing question, or tell us how you stay in touch with
-            clients today. Someone on the team — usually Priya or Dev — replies within a
+            clients today. Someone on the team, usually Priya or Dev, replies within a
             business day.
           </p>
           <div className="mt-8 space-y-3 font-body text-sm">
