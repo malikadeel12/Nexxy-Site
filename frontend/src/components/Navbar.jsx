@@ -12,7 +12,7 @@ export default function Navbar() {
   return (
     <nav
       data-testid="navbar"
-      className="flex items-center justify-between px-6 md:px-12 lg:px-20 py-5 font-body relative z-20"
+      className="fixed top-4 inset-x-4 md:inset-x-10 lg:inset-x-16 z-50 flex items-center justify-between rounded-full border border-border bg-background/75 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.06)] px-5 md:px-8 py-3 font-body"
     >
       <a
         href="/#home"

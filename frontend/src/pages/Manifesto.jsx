@@ -18,7 +18,7 @@ export default function Manifesto() {
   return (
     <div className="bg-background min-h-screen flex flex-col">
       <Navbar />
-      <main data-testid="manifesto-page" className="flex-1 px-6 md:px-12 lg:px-20 py-16 md:py-24">
+      <main data-testid="manifesto-page" className="flex-1 px-6 md:px-12 lg:px-20 pt-32 md:pt-36 pb-16 md:pb-24">
         <div className="max-w-3xl mx-auto">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
