@@ -8,7 +8,7 @@ const plans = [
     price: "$1",
     period: "first month",
     desc: "Then $49.99/month. No hidden setup fees. No long-term contracts.",
-    note: "VoIP usage (calls, texts, emails) billed separately at standard rates.",
+    note: null,
     features: [
       "AI-powered pipeline management",
       "Pre-built sales funnels",
