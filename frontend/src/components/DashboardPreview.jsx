@@ -67,10 +67,6 @@ export default function DashboardPreview() {
           <span className="text-slate-400">Search contacts, leads, deals...</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="relative h-7 w-7 bg-white rounded-lg border border-slate-100 shadow-sm flex items-center justify-center text-slate-500">
-            <Bell className="h-3.5 w-3.5" />
-            <span className="absolute top-1.5 right-1.5 h-1.5 w-1.5 bg-red-500 rounded-full border border-white" />
-          </div>
           <div
             data-testid="nexxy-intelligence-button"
             className="h-7 rounded-lg flex items-center gap-1.5 px-3 text-white font-medium shadow-lg shadow-blue-500/20"
@@ -78,6 +74,10 @@ export default function DashboardPreview() {
           >
             <Sparkles className="h-3 w-3" />
             <span className="text-[10px] whitespace-nowrap">Nexxy Intelligence</span>
+          </div>
+          <div className="relative h-7 w-7 bg-white rounded-lg border border-slate-100 shadow-sm flex items-center justify-center text-slate-500">
+            <Bell className="h-3.5 w-3.5" />
+            <span className="absolute top-1.5 right-1.5 h-1.5 w-1.5 bg-red-500 rounded-full border border-white" />
           </div>
           <div className="h-7 w-7 rounded-lg flex items-center justify-center text-white shadow-lg shadow-blue-500/20" style={{ backgroundColor: BLUE }}>
             <Phone className="h-3.5 w-3.5" />
