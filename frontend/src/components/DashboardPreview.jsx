@@ -163,8 +163,8 @@ export default function DashboardPreview() {
         <div className="w-14 shrink-0 py-3 flex flex-col items-center justify-between self-start rounded-2xl border" style={{ backgroundColor: t.panel, borderColor: t.panelBorder, boxShadow: t.shadow }}>
           <div className="flex flex-col gap-1 items-center w-full">
             <div className="relative w-full flex justify-center py-1">
-              <div className="absolute left-0 top-1 bottom-1 w-0.5 rounded-r" style={{ backgroundColor: BLUE }} />
-              <div className="h-8 w-8 rounded-xl shadow-sm flex items-center justify-center" style={{ color: isDark ? "#7EA2FF" : BLUE, backgroundColor: t.blueIconBg }}>
+              <div className="absolute left-0 top-1 bottom-1 w-0.5 rounded-r" style={{ backgroundColor: t.accent }} />
+              <div className="h-8 w-8 rounded-xl shadow-sm flex items-center justify-center" style={{ color: t.accent, backgroundColor: t.blueIconBg }}>
                 <Home className="h-3.5 w-3.5" />
               </div>
             </div>
