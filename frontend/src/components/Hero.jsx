@@ -18,47 +18,69 @@ export default function Hero() {
         playsInline
       />
       <div className="relative z-10 flex flex-col items-center w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          data-testid="hero-eyebrow"
+          className="inline-flex items-center rounded-full border border-border bg-background px-4 py-1.5 text-[11px] md:text-xs tracking-[0.18em] uppercase text-muted-foreground font-body mb-6"
+        >
+          Built for relationship-first real estate professionals
+        </motion.div>
+
         <motion.h1
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           data-testid="hero-headline"
-          className="text-center font-display text-5xl md:text-6xl lg:text-[5rem] leading-[0.95] tracking-tight text-foreground max-w-xl"
+          className="text-center font-display text-4xl md:text-6xl lg:text-[4.5rem] leading-[1] tracking-tight text-foreground max-w-4xl"
         >
-          The Future of <em className="italic">Smarter</em> Automation
+          Every Great Deal Begins With a <em className="italic">Great Relationship</em>.
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          data-testid="hero-subheadline"
-          className="mt-4 text-center text-base md:text-lg text-muted-foreground max-w-[650px] leading-relaxed font-body"
+          transition={{ duration: 0.6, delay: 0.18 }}
+          data-testid="hero-highlight"
+          className="mt-4 text-center font-body text-sm md:text-base font-medium text-accent"
         >
-          Automate your busywork with intelligent agents that learn, adapt, and
-          execute—so your team can focus on what matters most.
+          Nurture Every Conversation. Earn More Trust. Close More Business.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.24 }}
+          data-testid="hero-subheadline"
+          className="mt-3 text-center text-base md:text-lg text-muted-foreground max-w-[680px] leading-relaxed font-body"
+        >
+          Real estate isn't won by the loudest marketer. It's won by the professional who
+          consistently stays present, follows up thoughtfully, and builds trust over time.
+          Nexxy combines AI, automation, and relationship intelligence to help you create
+          meaningful client experiences—without adding more work to your day.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-5 flex items-center gap-3"
+          className="mt-6 flex items-center gap-3"
         >
           <Button
             data-testid="hero-book-demo-button"
             className="rounded-full px-6 py-5 text-sm font-medium font-body"
             asChild
           >
-            <a href="#contact">Book a demo</a>
+            <a href="#contact">Start Building Better Relationships</a>
           </Button>
           <Button
             data-testid="hero-play-button"
             variant="ghost"
-            size="icon"
-            className="h-11 w-11 rounded-full border-0 bg-background shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:bg-background/80"
+            className="h-11 rounded-full border-0 bg-background px-5 shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:bg-background/80 text-sm font-body font-medium"
           >
-            <Play className="h-4 w-4 fill-foreground" />
+            <Play className="h-4 w-4 fill-foreground mr-2" />
+            See Nexxy In Action
           </Button>
         </motion.div>
 

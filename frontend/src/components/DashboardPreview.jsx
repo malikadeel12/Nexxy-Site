@@ -4,13 +4,14 @@ import {
   Search,
   Bell,
   Home,
-  CheckSquare,
-  ArrowLeftRight,
-  CreditCard,
-  Landmark,
-  Wallet,
-  Layers,
+  Users,
+  MessageSquare,
+  PhoneCall,
+  Building2,
+  HeartHandshake,
+  BarChart3,
   Route,
+  Megaphone,
   BellRing,
   Settings,
   Check,
@@ -20,34 +21,34 @@ import {
 
 const sidebarMain = [
   { icon: Home, label: "Home", active: true },
-  { icon: CheckSquare, label: "Tasks", badge: "10" },
-  { icon: ArrowLeftRight, label: "Transactions" },
-  { icon: Wallet, label: "Payments", chevron: true },
-  { icon: CreditCard, label: "Cards" },
-  { icon: Landmark, label: "Capital" },
-  { icon: Layers, label: "Accounts", chevron: true },
+  { icon: PhoneCall, label: "Follow-ups", badge: "10" },
+  { icon: Users, label: "Contacts" },
+  { icon: MessageSquare, label: "Conversations", chevron: true },
+  { icon: Building2, label: "Listings" },
+  { icon: HeartHandshake, label: "Referrals" },
+  { icon: BarChart3, label: "Reports", chevron: true },
 ];
 
 const sidebarWorkflows = [
-  { icon: Route, label: "Trake rutes" },
-  { icon: Wallet, label: "Payments" },
+  { icon: Route, label: "Nurture routes" },
+  { icon: Megaphone, label: "Campaigns" },
   { icon: BellRing, label: "Notifications" },
   { icon: Settings, label: "Settings" },
 ];
 
-const actions = ["Send", "Request", "Transfer", "Deposit", "Pay Bill", "Create Invoice"];
+const actions = ["Log Call", "Add Contact", "Follow Up", "Schedule", "Send Update", "Create Task"];
 
-const accounts = [
-  { name: "Credit", amount: "$98,125.50" },
-  { name: "Treasury", amount: "$6,750,200.00" },
-  { name: "Operations", amount: "$1,592,864.82" },
+const pipeline = [
+  { name: "Active Buyers", amount: "128" },
+  { name: "Active Sellers", amount: "45" },
+  { name: "Referral Partners", amount: "62" },
 ];
 
-const transactions = [
-  { date: "Jun 12", desc: "AWS", amount: "-$5,200", status: "Pending", color: "text-amber-600", bg: "bg-amber-50" },
-  { date: "Jun 11", desc: "Client Payment", amount: "+$125,000", status: "Completed", color: "text-emerald-600", bg: "bg-emerald-50" },
-  { date: "Jun 10", desc: "Payroll", amount: "-$85,450", status: "Completed", color: "text-emerald-600", bg: "bg-emerald-50" },
-  { date: "Jun 09", desc: "Office Supplies", amount: "-$1,200", status: "Completed", color: "text-emerald-600", bg: "bg-emerald-50" },
+const conversations = [
+  { date: "Jun 12", client: "Sarah Mitchell", topic: "Offer follow-up", status: "Awaiting reply", color: "text-amber-600", bg: "bg-amber-50" },
+  { date: "Jun 11", client: "The Hendersons", topic: "Closing congrats + referral", status: "Replied", color: "text-emerald-600", bg: "bg-emerald-50" },
+  { date: "Jun 10", client: "David Chen", topic: "Listing photos review", status: "Replied", color: "text-emerald-600", bg: "bg-emerald-50" },
+  { date: "Jun 09", client: "Priya Nair", topic: "First-time buyer intro call", status: "Scheduled", color: "text-emerald-600", bg: "bg-emerald-50" },
 ];
 
 export default function DashboardPreview() {
@@ -72,7 +73,7 @@ export default function DashboardPreview() {
         </div>
         <div className="flex items-center gap-2.5">
           <span className="rounded-full bg-primary text-primary-foreground px-3 py-1 font-medium">
-            Move Money
+            New Follow-Up
           </span>
           <Bell className="h-3.5 w-3.5 text-muted-foreground" />
           <div className="h-5 w-5 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-[9px] font-semibold">
@@ -138,21 +139,21 @@ export default function DashboardPreview() {
           </div>
 
           <div className="flex gap-4">
-            {/* Balance card */}
+            {/* Relationships card */}
             <div className="flex-1 basis-0 bg-background rounded-lg border border-border p-4">
               <div className="flex items-center gap-1.5 text-muted-foreground">
-                <span>Mercury Balance</span>
+                <span>Relationships Nurtured</span>
                 <span className="h-3.5 w-3.5 rounded-full bg-accent/10 flex items-center justify-center">
                   <Check className="h-2 w-2 text-accent" />
                 </span>
               </div>
               <div className="mt-1 text-lg font-semibold">
-                $8,450,190<span className="text-xs text-muted-foreground">.32</span>
+                2,847<span className="text-xs text-muted-foreground"> contacts</span>
               </div>
               <div className="mt-2 flex items-center gap-4 text-[10px]">
                 <span className="text-muted-foreground">Last 30 Days</span>
-                <span className="text-emerald-600 font-medium">+$1.8M</span>
-                <span className="text-red-500 font-medium">-$900K</span>
+                <span className="text-emerald-600 font-medium">+324 new</span>
+                <span className="text-red-500 font-medium">3 at risk</span>
               </div>
               <svg viewBox="0 0 300 80" className="mt-3 h-20 w-full" preserveAspectRatio="none">
                 <defs>
@@ -174,48 +175,46 @@ export default function DashboardPreview() {
               </svg>
             </div>
 
-            {/* Accounts card */}
+            {/* Pipeline card */}
             <div className="flex-1 basis-0 bg-background rounded-lg border border-border p-4">
               <div className="flex items-center justify-between">
-                <span className="font-medium">Accounts</span>
+                <span className="font-medium">Pipeline</span>
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <Plus className="h-3 w-3" />
                   <MoreVertical className="h-3 w-3" />
                 </div>
               </div>
               <div>
-                {accounts.map((acc) => (
-                  <div key={acc.name} className="flex items-center justify-between py-3 text-xs">
-                    <span className="text-muted-foreground">{acc.name}</span>
-                    <span className="font-medium">{acc.amount}</span>
+                {pipeline.map((p) => (
+                  <div key={p.name} className="flex items-center justify-between py-3 text-xs">
+                    <span className="text-muted-foreground">{p.name}</span>
+                    <span className="font-medium">{p.amount}</span>
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Transactions */}
+          {/* Conversations */}
           <div className="bg-background rounded-lg border border-border p-4">
-            <div className="font-medium mb-2">Recent Transactions</div>
+            <div className="font-medium mb-2">Recent Conversations</div>
             <table className="w-full text-[10px]">
               <thead>
                 <tr className="text-muted-foreground text-left">
                   <th className="font-normal py-1.5">Date</th>
-                  <th className="font-normal py-1.5">Description</th>
-                  <th className="font-normal py-1.5">Amount</th>
+                  <th className="font-normal py-1.5">Client</th>
+                  <th className="font-normal py-1.5">Topic</th>
                   <th className="font-normal py-1.5">Status</th>
                 </tr>
               </thead>
               <tbody>
-                {transactions.map((t) => (
-                  <tr key={t.desc} className="border-t border-border">
-                    <td className="py-2 text-muted-foreground">{t.date}</td>
-                    <td className="py-2">{t.desc}</td>
-                    <td className={`py-2 font-medium ${t.amount.startsWith("+") ? "text-emerald-600" : ""}`}>
-                      {t.amount}
-                    </td>
+                {conversations.map((c) => (
+                  <tr key={c.client} className="border-t border-border">
+                    <td className="py-2 text-muted-foreground">{c.date}</td>
+                    <td className="py-2 font-medium">{c.client}</td>
+                    <td className="py-2 text-muted-foreground">{c.topic}</td>
                     <td className="py-2">
-                      <span className={`rounded-full px-2 py-0.5 ${t.bg} ${t.color}`}>{t.status}</span>
+                      <span className={`rounded-full px-2 py-0.5 ${c.bg} ${c.color}`}>{c.status}</span>
                     </td>
                   </tr>
                 ))}

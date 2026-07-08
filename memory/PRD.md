@@ -14,14 +14,18 @@ Build a branded company website for "Nexxy" (company also has a Nexxy CRM). Deta
 - Backend: FastAPI + Motor (MongoDB), /api prefix
 - Fonts: Instrument Serif (display) + Inter (body) via Google Fonts import in index.css
 
+## Brand Repositioning (Website copy.docx — Jun 2026)
+Nexxy = relationship-first CRM for real estate professionals. Sells better professional relationships, not AI/CRM features. Chain: AI → communication → consistency → trust → relationships → referrals → business.
+
 ## Implemented (Jun 2026)
 - index.css tokens per spec, tailwind fontFamily display/body
 - Navbar (✦ Nexxy, links, rounded-full CTA)
 - Hero per spec + overlap effect: half dashboard in 100vh hero, half floats over Features (user-requested change from clipped spec)
 - DashboardPreview fully coded in React (topbar, sidebar w/ Workflows, action pills, balance card w/ SVG chart, accounts card, transactions table)
 - Humanized redesign (v2): Features = trusted-by strip + asymmetric bento grid (wide agent card w/ workflow chips, dark CRM card) + testimonial (Maya Krishnan, Crestline); About = founder story (2023, "Friday problem", 11,482 teams, 23 people) + numbered beliefs list; Pricing = "The price is on the page" + human footnote; Contact = "Talk to a person, not a chatbot"; Footer = "Written by humans, automated by agents"
+- v3 Relationship-first rebuild per Website copy.docx: Hero (eyebrow "BUILT FOR RELATIONSHIP-FIRST REAL ESTATE PROFESSIONALS", "Every Great Deal Begins With a Great Relationship.", accent highlight line, CTAs "Start Building Better Relationships" / "See Nexxy In Action"); dashboard re-themed to real-estate CRM (Follow-ups, Contacts, Listings, Relationships Nurtured 2,847, Pipeline, Recent Conversations); Features.jsx = trust-bar beliefs + "Technology Should Never Replace Relationships" + Human→AI→Consistency→Trust→Referrals chain + 4 Relationship Pillars; Story.jsx = Consistency Engine + dark Philosophy section; Platform.jsx = Social/AI-quiet/CRM blocks + emotional testimonial; About.jsx = "Better Relationships Build Better Businesses" + Nexxy Manifesto block; Footer tagline "Helping professionals build relationships that build businesses."; hero badge "GPT-5 support" removed earlier per user
 - Backend: POST/GET /api/leads (Lead model, ISO datetime storage)
-- Testing: iteration_1 — 100% backend & frontend pass
+- Testing: iteration_1 — 100% backend & frontend pass (pre-v3); v3 verified via screenshots
 
 ## Backlog / Next
 - P1: Link "Get Started"/CTAs to actual Nexxy CRM URL when provided

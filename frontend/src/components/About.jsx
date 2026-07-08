@@ -1,21 +1,18 @@
 import { motion } from "framer-motion";
 
-const beliefs = [
-  {
-    num: "01",
-    title: "Software should do the chasing",
-    desc: "Follow-ups, reminders, data entry — if a machine can do it, a person shouldn't have to. That rule shapes every feature we ship.",
-  },
-  {
-    num: "02",
-    title: "No feature ships until we use it",
-    desc: "Our own sales, support, and hiring run entirely on Nexxy. When something annoys us, it gets fixed before you ever see it.",
-  },
-  {
-    num: "03",
-    title: "Small team, opinionated product",
-    desc: "We're 23 people. We say no a lot. The upside: everything in Nexxy works together, because the same people built all of it.",
-  },
+const fadeUp = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+};
+
+const manifesto = [
+  "Technology changes. Markets evolve. Algorithms come and go.",
+  "But trust still grows the same way. One conversation. One promise. One thoughtful follow-up. One relationship at a time.",
+  "We believe businesses should educate before they sell. Listen before they automate. Serve before they scale.",
+  "Because in the end... people don't recommend software. They recommend experiences.",
+  "And behind every unforgettable experience is someone who cared enough to build a relationship that lasted.",
+  "That's why Nexxy exists. Not to replace people. To help them become even more human.",
 ];
 
 export default function About() {
@@ -23,63 +20,48 @@ export default function About() {
     <section id="about" data-testid="about-section" className="px-6 md:px-12 lg:px-20 py-24 md:py-32 border-t border-border">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-5"
-          >
+          <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="lg:col-span-5">
+            <p className="text-sm text-accent font-medium font-body mb-3">About Nexxy</p>
             <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight text-foreground">
-              We got tired of doing the same work <em className="italic">twice</em>
+              We Believe Better Relationships Build Better <em className="italic">Businesses</em>.
             </h2>
-            <p className="mt-6 text-muted-foreground font-body leading-relaxed">
-              Nexxy started in 2023 as an internal tool at a small agency. Every Friday, someone
-              spent half a day copying data between a CRM, a spreadsheet, and an inbox. We
-              automated that afternoon away — then our clients asked for the same thing.
+          </motion.div>
+          <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.15 }} className="lg:col-span-6 lg:col-start-7">
+            <p className="text-muted-foreground font-body leading-relaxed">
+              Nexxy wasn't created because the world needed another CRM. It was created because
+              too many professionals were losing opportunities—not because they lacked talent,
+              but because they lacked time.
             </p>
             <p className="mt-4 text-muted-foreground font-body leading-relaxed">
-              Three years later, 11,482 teams run on Nexxy. Our agents have quietly handled
-              over 40 million tasks. The Friday problem, as we still call it, is gone.
+              Relationships deserve consistency. Clients deserve thoughtful communication.
+              Professionals deserve technology that helps them serve people better.
             </p>
-            <div className="mt-8 flex items-center gap-8 font-body" data-testid="about-stat-0">
-              <div>
-                <div className="font-display text-3xl text-foreground">11,482</div>
-                <div className="text-xs text-muted-foreground mt-1">teams on Nexxy</div>
-              </div>
-              <div className="h-8 w-px bg-border" />
-              <div>
-                <div className="font-display text-3xl text-foreground">40M+</div>
-                <div className="text-xs text-muted-foreground mt-1">tasks handled</div>
-              </div>
-              <div className="h-8 w-px bg-border" />
-              <div>
-                <div className="font-display text-3xl text-foreground">23</div>
-                <div className="text-xs text-muted-foreground mt-1">of us, worldwide</div>
-              </div>
-            </div>
+            <p className="mt-4 text-foreground font-body leading-relaxed font-medium">
+              Everything we build begins with one question: Will this help someone create a
+              better client experience? If the answer is yes, we build it.
+            </p>
           </motion.div>
+        </div>
 
-          <div className="lg:col-span-6 lg:col-start-7 space-y-10">
-            {beliefs.map((b, i) => (
-              <motion.div
-                key={b.num}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                data-testid={`about-belief-${i}`}
-                className="flex gap-6 border-t border-border pt-8"
-              >
-                <span className="font-display text-2xl text-muted-foreground/60">{b.num}</span>
-                <div className="font-body">
-                  <h3 className="font-semibold text-foreground">{b.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
-                </div>
-              </motion.div>
+        {/* Manifesto */}
+        <motion.div
+          {...fadeUp}
+          transition={{ duration: 0.7 }}
+          data-testid="manifesto"
+          className="mt-24 rounded-2xl border border-border bg-secondary/50 p-10 md:p-16"
+        >
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-body">The Nexxy Manifesto</p>
+          <h3 className="mt-4 font-display text-3xl md:text-5xl tracking-tight text-foreground">
+            Build Relationships. <em className="italic">Not Just Pipelines.</em>
+          </h3>
+          <div className="mt-8 max-w-2xl space-y-4">
+            {manifesto.map((line, i) => (
+              <p key={i} className="text-muted-foreground font-body leading-relaxed">
+                {line}
+              </p>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

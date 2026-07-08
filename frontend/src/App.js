@@ -4,6 +4,8 @@ import { Toaster } from "sonner";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
+import Story from "@/components/Story";
+import Platform from "@/components/Platform";
 import Pricing from "@/components/Pricing";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
@@ -16,6 +18,8 @@ const Landing = () => (
       <Hero />
     </div>
     <Features />
+    <Story />
+    <Platform />
     <Pricing />
     <About />
     <Contact />
