@@ -133,7 +133,7 @@ export default function DashboardPreview() {
       {/* Top bar: floating rounded panel */}
       <div className="mx-3 mt-3 flex items-center justify-between px-4 py-2.5 rounded-2xl border" style={{ backgroundColor: t.panel, borderColor: t.panelBorder, boxShadow: t.shadow }}>
         <div className="flex items-center gap-2">
-          <img src="/nexxy-logo.png" alt="Nexxy" className="h-3.5 w-auto" style={isDark ? { filter: "invert(1) hue-rotate(15deg) saturate(1.1) brightness(1.05)" } : undefined} />
+          <img src={isDark ? "/nexxy-logo-dark.png" : "/nexxy-logo.png"} alt="Nexxy" className="h-3.5 w-auto" />
         </div>
         <div className="hidden sm:flex items-center gap-1.5 rounded-lg border px-3 py-1.5 w-44 md:w-72" style={{ backgroundColor: t.searchBg, borderColor: t.searchBorder }}>
           <Search className="h-3 w-3" style={{ color: t.subtle }} />

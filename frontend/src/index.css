@@ -167,10 +167,7 @@ em {
     border: 1px solid rgba(209, 173, 70, 0.18);
 }
 
-/* Logo adapts to dark mode (navy inverts to warm gold) */
-.dark .logo-adaptive {
-    filter: invert(1) hue-rotate(15deg) saturate(1.1) brightness(1.05);
-}
+/* Logo swap handled via ThemeContext (nexxy-logo-dark.png) */
 
 @layer base {
     [data-debug-wrapper="true"] {
