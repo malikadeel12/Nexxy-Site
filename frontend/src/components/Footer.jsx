@@ -28,7 +28,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-5">
             <a href="/#home" className="inline-flex items-center">
-              <img src="/nexxy-logo.png" alt="Nexxy" className="h-6 w-auto" />
+              <img src="/nexxy-logo.png" alt="Nexxy" className="h-4 w-auto" />
             </a>
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-xs">
               Helping professionals build relationships that build businesses.

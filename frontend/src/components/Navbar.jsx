@@ -20,7 +20,7 @@ export default function Navbar() {
         className="flex items-center justify-between rounded-full border border-border bg-background/75 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.06)] px-5 md:px-8 py-3"
       >
         <a href="/#home" data-testid="navbar-logo" className="flex items-center">
-          <img src="/nexxy-logo.png" alt="Nexxy" className="h-6 md:h-7 w-auto" />
+          <img src="/nexxy-logo.png" alt="Nexxy" className="h-4 md:h-5 w-auto" />
         </a>
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
