@@ -17,8 +17,8 @@ const product = [
 
 export default function Footer() {
   return (
-    <footer data-testid="footer" className="border-t border-border bg-secondary/40 font-body">
-      <div className="px-6 md:px-12 lg:px-20 pt-16 md:pt-20 pb-10 max-w-6xl mx-auto">
+    <footer data-testid="footer" className="border-t border-border bg-secondary/40 font-body px-6 md:px-12 lg:px-20">
+      <div className="pt-16 md:pt-20 pb-10 max-w-6xl mx-auto">
         {/* Statement */}
         <p className="font-display text-3xl md:text-5xl tracking-tight text-foreground max-w-2xl">
           Build Relationships. <em className="italic text-accent">Not Just Pipelines.</em>
