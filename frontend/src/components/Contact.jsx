@@ -51,7 +51,7 @@ export default function Contact() {
             business day.
           </p>
           <div className="mt-8 space-y-3 font-body text-sm">
-            <p className="text-foreground font-medium">hello@nexxy.com</p>
+            <p className="text-foreground font-medium">support@getnexxy.com</p>
             <p className="text-muted-foreground">Mon–Fri, 9am–6pm. Weekends we're testing our own automations.</p>
           </div>
         </motion.div>
