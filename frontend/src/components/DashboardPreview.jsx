@@ -57,10 +57,7 @@ export default function DashboardPreview() {
       {/* Top bar — floating rounded panel */}
       <div className="mx-3 mt-3 flex items-center justify-between px-4 py-2.5 rounded-2xl bg-white/80 border border-white/80" style={{ boxShadow: "0 4px 20px rgba(220,225,240,0.4)" }}>
         <div className="flex items-center gap-2">
-          <div className="h-6 w-6 rounded-lg flex items-center justify-center text-white font-bold text-xs" style={{ backgroundColor: BLUE }}>
-            N
-          </div>
-          <span className="font-bold tracking-wider text-xs" style={{ color: DARK }}>NEXXY</span>
+          <img src="/nexxy-logo.png" alt="Nexxy" className="h-3.5 w-auto" />
         </div>
         <div className="hidden sm:flex items-center gap-1.5 rounded-lg bg-[#EBF1FA]/60 border border-slate-200/60 px-3 py-1.5 w-44 md:w-72">
           <Search className="h-3 w-3 text-slate-400" />
