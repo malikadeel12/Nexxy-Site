@@ -54,8 +54,8 @@ export default function DashboardPreview() {
       className="rounded-xl overflow-hidden border border-white/80 text-[11px] select-none pointer-events-none font-body"
       style={{ backgroundColor: "#EBF1FA", color: "#334155" }}
     >
-      {/* Top bar */}
-      <div className="flex items-center justify-between px-4 py-2.5 border-b border-blue-50" style={{ backgroundColor: "#F3F7FC" }}>
+      {/* Top bar — floating rounded panel */}
+      <div className="mx-3 mt-3 flex items-center justify-between px-4 py-2.5 rounded-2xl bg-white/80 border border-white/80" style={{ boxShadow: "0 4px 20px rgba(220,225,240,0.4)" }}>
         <div className="flex items-center gap-2">
           <div className="h-6 w-6 rounded-lg flex items-center justify-center text-white font-bold text-xs" style={{ backgroundColor: BLUE }}>
             N
@@ -85,13 +85,13 @@ export default function DashboardPreview() {
         </div>
       </div>
 
-      <div className="flex">
-        {/* Icon sidebar */}
-        <div className="w-14 shrink-0 py-3 flex flex-col items-center justify-between border-r border-blue-50" style={{ backgroundColor: "#F3F7FC" }}>
+      <div className="flex gap-0 px-3 pb-3 pt-3">
+        {/* Icon sidebar — floating rounded panel */}
+        <div className="w-14 shrink-0 py-3 flex flex-col items-center justify-between self-start rounded-2xl bg-white/80 border border-white/80" style={{ boxShadow: "0 4px 20px rgba(220,225,240,0.4)" }}>
           <div className="flex flex-col gap-1 items-center w-full">
             <div className="relative w-full flex justify-center py-1">
               <div className="absolute left-0 top-1 bottom-1 w-0.5 rounded-r" style={{ backgroundColor: BLUE }} />
-              <div className="h-8 w-8 bg-white rounded-xl border border-blue-100/50 shadow-sm flex items-center justify-center" style={{ color: BLUE }}>
+              <div className="h-8 w-8 rounded-xl border border-blue-100/50 shadow-sm flex items-center justify-center" style={{ color: BLUE, backgroundColor: "#E8EFFF" }}>
                 <Home className="h-3.5 w-3.5" />
               </div>
             </div>
@@ -111,7 +111,7 @@ export default function DashboardPreview() {
         </div>
 
         {/* Main content */}
-        <div className="flex-1 p-5 space-y-5">
+        <div className="flex-1 pl-3 space-y-5">
           {/* Welcome jumbotron */}
           <div className="rounded-2xl p-5 border border-white/60 relative bg-gradient-to-br from-white via-white to-blue-50/30" style={{ boxShadow: "0 10px 30px -5px rgba(200,210,230,0.3)" }}>
             <div className="absolute top-5 right-5 flex items-center gap-1 rounded-full px-2.5 py-1 text-[9px] font-medium border" style={{ backgroundColor: "#E6F7ED", borderColor: "#BCE8CC", color: "#1E7E44" }}>
