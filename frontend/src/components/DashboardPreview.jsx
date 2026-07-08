@@ -31,11 +31,11 @@ const DARK = "#0A1931";
 const sidebarIcons = [Users, GitBranch, MessageSquare, Calendar, Mic, Megaphone, Zap, Bot, BarChart2, UserCheck, CreditCard];
 
 const metrics = [
-  { icon: Users, label: "Total Leads", value: "50", tag: "0 hot", blue: false },
-  { icon: GitBranch, label: "Active Deals", value: null, blue: true },
-  { icon: DollarSign, label: "Pipeline Value", value: null, blue: false },
-  { icon: Calendar, label: "Upcoming Appts", value: null, blue: false },
-  { icon: Trophy, label: "Win Rate", value: null, blue: false },
+  { icon: Users, label: "Total Leads", value: "50", tag: "3 hot", blue: false },
+  { icon: GitBranch, label: "Active Deals", value: "12", blue: true },
+  { icon: DollarSign, label: "Pipeline Value", value: "$4.2M", blue: false },
+  { icon: Calendar, label: "Upcoming Appts", value: "8", blue: false },
+  { icon: Trophy, label: "Win Rate", value: "68%", blue: false },
 ];
 
 const actions = [
