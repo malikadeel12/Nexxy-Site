@@ -27,7 +27,8 @@ Nexxy = relationship-first CRM for real estate professionals. Sells better profe
 - v4: Dedicated /manifesto page (pages/Manifesto.jsx) with staggered serif line reveals + CTA; navbar & footer include "Manifesto" link; About shows teaser card linking to /manifesto
 - v5: Social share meta tags in public/index.html (OG + Twitter card, branded title/description) + generated branded og-image.png (1200×630, PIL w/ Instrument Serif) served from /og-image.png. NOTE: og:url/og:image use preview domain — must be updated to custom domain at launch.
 - Backend: POST/GET /api/leads (Lead model, ISO datetime storage)
-- Testing: iteration_1 — 100% backend & frontend pass (pre-v3); v3/v4 verified via screenshots
+- v6 Human-feel polish: marquee trust bar (pausable on hover, ✦ separators), hover-lift on pillar/pricing cards (accent border + shadow), nav-link underline animation, press (active scale) on CTAs, Platform section layout fix (accent-bordered copy blocks aligned), Growth plan "$2.60 a day" note
+- Testing: iteration_2 — 100% backend & frontend pass (full regression, both / and /manifesto, no console errors)
 
 ## Backlog / Next
 - P1: Link "Get Started"/CTAs to actual Nexxy CRM URL when provided
